@@ -1,0 +1,2015 @@
+
+#
+#
+#  █████╗  █████╗ ██████╗ ███████╗ 
+# ██╔══██╗██╔══██╗██╔══██╗██╔════╝ 
+# ██║  ╚═╝██║  ██║██████╔╝█████╗ 
+# ██║  ██╗██║  ██║██╔══██╗██╔══╝ 
+# ╚█████╔╝╚█████╔╝██║  ██║███████╗ 
+#  ╚════╝  ╚════╝ ╚═╝  ╚═╝╚══════╝ 
+#
+#
+
+# Make sure all of these are installed in your server: EssentialsX, Skript, SkQuery, Skellett, SkDragon, WorldEdit, LuckPerms, SkRayfall
+
+
+
+
+
+options: 
+	servername: &3Lots&bO&9Games
+	primaryWorld: MainWorld
+	appealLink: no way jose
+	serverTrueOwner: sccpsteve
+
+# Moderation 
+#   Permission Nodes For Moderation: 	
+	historyPerm: core.history
+	historyEditPerm: core.history.edit
+	warnPerm: core.warn
+	banPerm: core.ban
+	mutePerm: core.mute
+	unmutePerm: core.unmute
+	unbanPerm: core.unban
+	clearChatPerm: core.clearchat
+	muteChatPerm: core.mutechat
+	muteChatBypass: core.bypass.chatmute
+	clearChatBypass: core.bypass.clearchat
+	trapGui: core.trapgui
+	holoPerm: core.hologram
+	
+# Extraordinary Gameplay Mechanics
+#   Elytra allowed in world:
+	elyCmdAllowedInWorld: "MainWorld"
+
+
+    # DO NOT EDIT BELOW THIS LINE UNLESS YOU KNOW WHAT YOU ARE DOING!
+
+	ver: LOG 2/12/2022 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+on script load:
+	broadcast "&a&l✓ &bCore by &aSccp&3s&9teve &breloaded successfully."
+	log "[CORE] Successfully reloaded." to "core.log" 
+	clear {vote::*}
+
+command /core [<text>] [<number>]:
+    trigger:
+        if arg 1 is "help":
+            if arg 2 is 2:
+                message "&3&m                 &b Core &f| &7Page &e2/4 &3&m                 "
+                message "&b/warn <plr> <reason> &7| &3Warn someone in your server." to player
+                message "&b/nobodyasked <plr> &7| &3NOBODY FRICKING ASKED!!!!." to player
+                message "&b/attn <plr> <reason> &7| &3Catch a player's immediate attention with this command." to player
+                message "&b/vote <topic> &7| &3Start mandatory votes where Yes, Neutral, or No can be chosen." to player
+                message "&b/bc|bcast|broadc|broadcast|announce <text> &7| &3Broadcast a message to the entire server." to player
+                message "&b/shout <text> &7| &3Shout very loudly!" to player
+                message "&b/highlight <plr> <reason> &7| &3Highlight someone for something good they did!" to player
+                message "&b/shame <plr> <reason> &7| &3Become ashamed of someone for what they did." to player
+                message "&7&oType /core help 3 to view the next page."
+            else if arg 2 is 3:
+                message "&3&m                 &b Core &f| &7Page &e3/4 &3&m                 "
+                message "&b/invisframe &7| &3Receive an invisible item frame." to player
+                message "&b/displayglass &7| &3Get a displayglass with its setup tools." to player
+                message "&b/ecsee|enderchestsee|endersee|esee <plr> &7| &3View a player's ender chest and edit it." to player
+                message "&b/invs|invsee|is|isee <plr> &7| &3View a player's inventory and edit it." to player
+                message "&b/list &7| &3View the entire server's player list." to player
+                message "&b/emotes <chapter> &7| &3View Core's available chat emojis." to player
+                message "&b/forcechat <plr> <text> &7| &3Make a player say something of your choice." to player
+                message "&b/protest <text> &7| &3Make everyone say the same thing of your choice." to player
+                message "&7&oType /core help 4 to view the next page."
+            else if arg 2 is 4:
+                message "&3&m                 &b Core &f| &7Page &e3/4 &3&m                 "
+                message "&b/sc|staffc|staffchat|staffw|staffwhisper|swhisper [<text>]&7| &3Access the staff-only chat." to player
+                message "&b/vanish [<plr>] &7| &3Poof! Hide yourself from others." to player
+                message "&b/trapgui <plr> [<duration in secs>] &7| &3Trap someone in a GUI that they can't close." to player
+                message "&b/addstaff|removestaff|staff [<plr>] &7| &3Manage or view the server's staff list message." to player
+                message "&b" to player
+                message "&b/setnick <text> &7| &3Set your nickname." to player
+                message "&7&oType /core help 5 to view the next page."
+            else if arg 2 is 4:
+                message "&3&m                 &b Core &f| &7Page &e3/4 &3&m                 "
+                message "&b/mutechat &7| &3Mute the chat so nobody can talk." to player
+                message "&b/mute <plr> [<reason>] [<timespan>] &7| &3Someone being rude? Just mute them!" to player
+                message "&b/unmute <plr> [<reason>] &7| &3When you feel like you want to revoke that mute punishment." to player
+                message "&b/delhistory|history <player> [<id>]&7 | &3Manage a player's history."
+            else:
+                message "&b/core &7| &3Main core command." to player
+                message "&b/console &7| &3Execute commands through the console." to player
+                message "&b/modules &7| &3Toggle Core modules to enhance your experience." to player
+                message "&b/spawn [<plr>] &7| &3Teleport to the set server spawn." to player
+                message "&b/setspawn &7| &3Set your server's spawn." to player
+                message "&b/kick <plr> [<reason>] &7| &3Kick a specified player from your server." to player
+                message "&b/ban <plr> [<reason>] [<timespan>] &7| &3Ban a specified player from your server." to player
+                message "&b/unban <plr> &7| &3Unban the specified player who was previously banned." to player
+                message "&7&oType /core help 2 to view the next page."
+        else:
+            message "&cYou need to enter a sub-command!"
+            message "&3Available commands: &b/core help&3."
+command //moduletoggle [<text>]:
+	permission: op
+	trigger:
+		if arg 1 is "spawn":
+			if {module.spawn} is true:
+				clear {module.spawn}
+				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 0.95"
+				wait 2 ticks
+				log "[CORE] core.%player% has toggled module spawn. <OFF>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 0.5"
+			else:
+				set {module.spawn} to true
+				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 1.2"
+				wait 2 tick
+				log "[CORE] core.%player% has toggled module spawn. <ON>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 1"
+		if arg 1 is "filter":
+			if {module.filter} is true:
+				clear {module.filter}
+				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 0.95"
+				wait 2 ticks
+				log "[CORE] core.%player% has toggled module filter. <OFF>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 0.5"
+			else:
+				set {module.filter} to true
+				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 1.2"
+				wait 2 tick
+				log "[CORE] core.%player% has toggled module filter. <ON>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 1"
+		if arg 1 is "mod":
+			if {module.mod} is true:
+				clear {module.mod}
+				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 0.95"
+				wait 2 ticks
+				log "[CORE] core.%player% has toggled module moderation. <OFF>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 0.5"
+			else:
+				set {module.mod} to true
+				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 1.2"
+				wait 2 tick
+				log "[CORE] core.%player% has toggled module moderation. <ON>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 1"
+		if arg 1 is "chat":
+			if {module.chat} is true:
+				clear {module.chat}
+				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 0.95"
+				wait 2 ticks
+				log "[CORE] core.%player% has toggled module chat addons. <OFF>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 0.5"
+			else:
+				set {module.chat} to true
+				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 1.2"
+				wait 2 tick
+				log "[CORE] core.%player% has toggled module chat addons. <ON>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 1"
+		if arg 1 is "gp":
+			if {module.gp} is true:
+				clear {module.gp}
+				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 0.95"
+				wait 2 ticks
+				log "[CORE] core.%player% has toggled module gameplay mechanics. <OFF>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 0.5"
+			else:
+				set {module.gp} to true
+				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 1.2"
+				wait 2 tick
+				log "[CORE] core.%player% has toggled module gameplay mechanics. <ON>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 1"
+		if arg 1 is "cpref":
+			if {module.cpref} is true:
+				clear {module.cpref}
+				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 0.95"
+				wait 2 ticks
+				log "[CORE] core.%player% has toggled module CPrefix. <OFF>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 0.5"
+			else:
+				set {module.cpref} to true
+				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 1.2"
+				wait 2 tick
+				log "[CORE] core.%player% has toggled module CPrefix. <ON>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 1"
+		execute player command "//definemodulemenu"
+command /modules:
+	trigger:
+		open chest with 3 rows named "&3Core" to player
+		execute player command "//definemodulemenu"
+command //definemodulemenu:
+	permission: op
+	trigger:
+		if {module.spawn} is not set:
+			format slot 0 of player with red stained glass pane named "&3Module: &bSpawn" to run [execute player command "//moduletoggle spawn"]
+		else:
+			format slot 0 of player with lime stained glass pane named "&3Module: &bSpawn" to run [execute player command "//moduletoggle spawn"]
+		if {module.mod} is not set:
+			format slot 1 of player with red stained glass pane named "&3Module: &bModeration [Ban/Kick/Warn Etc]" to run [execute player command "//moduletoggle mod"]
+		else:
+			format slot 1 of player with lime stained glass pane named "&3Module: &bModeration [Ban/Kick/Warn Etc]" to run [execute player command "//moduletoggle mod"]
+		if {module.filter} is not set:
+			format slot 2 of player with red stained glass pane named "&3Module: &bChat Filter" to run [execute player command "//moduletoggle filter"]
+		else:
+			format slot 2 of player with lime stained glass pane named "&3Module: &bChat Filter" to run [execute player command "//moduletoggle filter"]
+		if {module.chat} is not set:
+			format slot 3 of player with red stained glass pane named "&3Module: &bBetter Chat" to run [execute player command "//moduletoggle chat"]
+		else:
+			format slot 3 of player with lime stained glass pane named "&3Module: &bBetter Chat" to run [execute player command "//moduletoggle chat"]
+		if {module.cpref} is not set:
+			format slot 4 of player with red stained glass pane named "&3Module: &bCustom Chat [Prefix/NickName]" to run [execute player command "//moduletoggle cpref"]
+		else:
+			format slot 4 of player with lime stained glass pane named "&3Module: &bCustom Chat [Prefix/NickName]" to run [execute player command "//moduletoggle cpref"]
+		if {module.gp} is not set:
+			format slot 5 of player with red stained glass pane named "&3Module: &bExtraordinary Gameplay Mechanics" to run [execute player command "//moduletoggle gp"]
+		else:
+			format slot 5 of player with lime stained glass pane named "&3Module: &bExtraordinary Gameplay Mechanics" to run [execute player command "//moduletoggle gp"]
+
+
+command /console <text>:
+	permission: op
+	trigger:
+		execute console command arg 1
+		
+
+on respawn:
+    if {module.spawn} is not set:
+        stop
+    wait 3 ticks
+    teleport player to {spawnPos}
+    execute console command "/execute as core.%player% at @s run tp @s ~ ~ ~ %{y}% %{p}%"
+on join:
+    if {module.spawn} is not set:
+        stop
+    execute player command "/spawn"
+command /spawn [<text>]:
+    usage: &cUsage: /spawn
+    aliases: /hub, /lobby
+    trigger:
+        if {module.spawn} is not set:
+            execute player command "/espawn core.%arg 1%"
+            stop
+        teleport player to {spawnPos}
+        execute console command "/execute as core.%player% at @s run tp @s ~ ~ ~ %{y}% %{p}%"
+        execute console command "/playsound minecraft:entity.ender_eye.death ambient core.%player% ~ ~ ~ 1000000 1"
+
+command /setspawn [<text>]:
+    usage: &cUsage: /setspawn
+    permission: op
+    permission message: &cYou don't have permission.
+    trigger:
+        set {p} to player's pitch
+        set {y} to player's yaw
+        set {spawnPos} to location of block at location at player
+        message "&bYou just set new spawn to %{spawnPos}%&b, p: %{p}%&b, y: %{y}%&b." to player
+command /staff:
+	trigger:
+		if {module.mod} is not set:
+			message "&cThe moderation module is not enabled." to player
+			stop
+		message "&8[{@servername}&8] &7This is the list of all staff members: &f%{stafflist::*}%" to player
+command /addstaff <offline player>:
+	permission: op
+	trigger:
+		add arg 1 to {stafflist::*}
+		message "&8[{@servername}&8] &7core.%arg 1% was added to the list!" to player
+command /removestaff <offline player>:
+	permission: op
+	trigger:
+		remove arg 1 from {stafflist::*}
+		message "&8[{@servername}&8] &7core.%arg 1% was remove from the list!" to player
+
+on first join:
+  send "&3Welcome &bcore.%player%&3! Please enjoy your stay! &e☺" to player
+  log "[CORE] core.%player% joined for the first time." to "core.log" 
+
+on world change:
+  log "[CORE] core.%player% went to world ""core.%player's world%""." to "core.log" 
+
+command /invisframe:
+	trigger:
+		execute player command "minecraft:give @p item_frame{EntityTag:{Invisible:1,Invincible:1}}"
+
+on chat:
+	if {core.%player's uuid%.SuffixColorCode} is not set: 
+		set {core.%player's uuid%.SuffixColorCode} to "&r"
+	if {core.%player's uuid%.PrefixColorCode} is not set: 
+		set {core.%player's uuid%.SuffixColorCode} to "&r"
+    
+	if {module.filter} is not set:
+		stop
+	if player does not have permission "staff":
+		replace all "server suck" and "bad server" and "trash serv" and "crappy serv" with "lol this server is so good ngl " In message
+		replace all "op me" and "op pls" and "op please" and "op plz" and "pls op" and "please op" and "pleas op" and "gimme op" and "give me op" and "give me server operator" and "gimme server operator" and "make me server operator" with "Can I apply?" in message
+		# 1 letter swears and blocked symbols
+		replace all "卐" and "卍" with "%{core.%player's uuid%.PrefixColorCode}%*%{core.%player's uuid%.SuffixColorCode}%" in the message
+		# 2 letter swears
+		#replace all "" with "%{core.%player's uuid%.PrefixColorCode}%**%{core.%player's uuid%.SuffixColorCode}%" in the message
+		# 3 letter swears
+		replace all "sex", "fag", "kys", "cum", "ass" and "tit" with "%{core.%player's uuid%.PrefixColorCode}%***%{core.%player's uuid%.SuffixColorCode}%" in the message
+    	#quick fix below supposed to be here
+		replace all "frick" and "frickrick" with "f" in the message
+		# 4 letter swears
+		replace all "shit", "cunt", "porn", "jerk", "nazi", "cock", "rape", "r4pe", "repe", "fack", "fukk", "wank", "boob", "dick", "anus", "anal" and "fuck" with "%{core.%player's uuid%.PrefixColorCode}%****%{core.%player's uuid%.SuffixColorCode}%" in the message
+		# 5 letter swears
+		replace all "f uck", "fu ck", "fuc k", "f u c k", "f uck", "s hit", "sh it", "shi t", "s h i t", "nigga", "penis", "moron", "whore", "vulva", "pussy" and "bitch" with "%{core.%player's uuid%.PrefixColorCode}%*****%{core.%player's uuid%.SuffixColorCode}%" in the message
+		# 6 letter swears
+		replace all "nigger", "hitler", "retard", "rapist", "vagina"  and "condom" with "%{core.%player's uuid%.PrefixColorCode}%******%{core.%player's uuid%.SuffixColorCode}%" in the message
+		# 7 letter swears
+		replace all "die jew", "asshole" and "bastard" with "%{core.%player's uuid%.PrefixColorCode}%*******%{core.%player's uuid%.SuffixColorCode}%" in the message
+		# 8 letter swears
+		replace all "swastika", "retarded", "ass hole" and "ass-hole" with "%{core.%player's uuid%.PrefixColorCode}%********%{core.%player's uuid%.SuffixColorCode}%" in the message
+		# 9 letter swears
+		replace all "die u jew" and "pedophile" with "%{core.%player's uuid%.PrefixColorCode}%*********%{core.%player's uuid%.SuffixColorCode}%" in the message
+		# 10 letter swears
+		#replace all "" with "%{core.%player's uuid%.PrefixColorCode}%**********%{core.%player's uuid%.SuffixColorCode}%" in the message
+		# 11 letter swears
+		#replace all "" with "%{core.%player's uuid%.PrefixColorCode}%***********%{core.%player's uuid%.SuffixColorCode}%" in the message
+		# 12 letter swears
+		replace all "die you jew" with "%{core.%player's uuid%.PrefixColorCode}%************%{core.%player's uuid%.SuffixColorCode}%" in the message
+		
+on join:
+	if {module.chat} is set:
+		set join message to "&b%player% &3joined."
+		execute console command "/statusJoined %player%"
+command /statusjoined <text>:
+	executable by: console
+	trigger:
+		execute console command "execute as @a at @s run playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 5 0.6"
+		wait 2 tick
+		execute console command "execute as @a at @s run playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 5 0.7"
+on quit:
+	if {module.chat} is set:
+		execute console command "/statusLeave core.%player%"
+		set quit message to "&b%player% &3left."
+command /statusleave <text>:
+	executable by: console
+	trigger:
+		execute console command "execute as @a at @s run playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 5 0.7"
+		wait 2 tick
+		execute console command "execute as @a at @s run playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 5 0.6"
+
+	
+on chat:
+	if {module.chat} is not set:
+		stop
+	# execute console command "/playsound minecraft:entity.chicken.egg ambient @a ~ ~ ~ 3000000"
+	# Color codes, will not kick for illegal chars
+	if player has permission "essentials.chat.color":
+		replace all "&" with "##amp##" in message
+		replace all "##amp##a" with "§a" in the message
+		replace all "##amp##b" with "§b" in the message
+		replace all "##amp##c" with "§c" in the message
+		replace all "##amp##d" with "§d" in the message
+		replace all "##amp##e" with "§e" in the message
+		replace all "##amp##f" with "§f" in the message
+		replace all "##amp##1" with "§1" in the message
+		replace all "##amp##2" with "§2" in the message
+		replace all "##amp##3" with "§3" in the message
+		replace all "##amp##4" with "§4" in the message
+		replace all "##amp##5" with "§5" in the message
+		replace all "##amp##6" with "§6" in the message
+		replace all "##amp##7" with "§7" in the message
+		replace all "##amp##8" with "§8" in the message
+		replace all "##amp##9" with "§9" in the message
+		replace all "##amp##0" with "§0" in the message
+		replace all "##amp##r" with "§r" in the message
+		replace all "##amp##l" with "§l" in the message
+		replace all "##amp##k" with "§k" in the message
+		replace all "##amp##m" with "§m" in the message
+		replace all "##amp##n" with "§n" in the message
+		replace all "##amp##o" with "§o" in the message
+		replace all "##amp##" with "&" in message
+		
+
+	# Misc Fixes 
+	replace all "m%{core.%player's uuid%.PrefixColorCode}%***%{core.%player's uuid%.SuffixColorCode}%" with "mass" in the message
+	replace all "ddos" with "§c§lDDOS%{core.%player's uuid%.SuffixColorCode}%" in the message
+	replace all "en%{core.%player's uuid%.PrefixColorCode}%***%{core.%player's uuid%.SuffixColorCode}%y" with "entity" in the message
+	replace all "gl%{core.%player's uuid%.PrefixColorCode}%***%{core.%player's uuid%.SuffixColorCode}%" with "glass" in the message
+	replace all "p%{core.%player's uuid%.PrefixColorCode}%***%{core.%player's uuid%.SuffixColorCode}%" with "pass" in message
+	replace all "gr%{core.%player's uuid%.PrefixColorCode}%***%{core.%player's uuid%.SuffixColorCode}%" with "grass" in message
+	replace all "l%{core.%player's uuid%.PrefixColorCode}%***%{core.%player's uuid%.SuffixColorCode}%" with "lass" in message
+	replace all "%{core.%player's uuid%.PrefixColorCode}%***%{core.%player's uuid%.SuffixColorCode}%u" with "assu" in message
+	replace all "b%{core.%player's uuid%.PrefixColorCode}%***%{core.%player's uuid%.SuffixColorCode}%" with "bass" in message
+	replace all "n%{core.%player's uuid%.PrefixColorCode}%***%{core.%player's uuid%.SuffixColorCode}%" with "ntit" in message
+	replace all "r%{core.%player's uuid%.PrefixColorCode}%***%{core.%player's uuid%.SuffixColorCode}%" with "rass" in message
+
+	# Faces and emoji
+	replace all ":recycle:" with "§2♻%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all ":pvp:" and ":swords:" with "§b⚔%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all ":star:" with "§e⭐%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all ":macro:" and ":command:" with "&f⌘%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all "<3" and ":heart:" with "§c❤%{core.%player's uuid%.SuffixColorCode}%" in the message
+	replace all ":)", "(:", "<:", ":>" and ":smile:" with "§a☺%{core.%player's uuid%.SuffixColorCode}%" in the message
+	replace all ":(", "):" and ":frown:" with "§c☹%{core.%player's uuid%.SuffixColorCode}%" in the message
+	replace all "and:" with "andz:" in message #QUICK FIX MUST BE HERE
+	replace all "do:" with "doz:" in message #QUICK FIX MUST BE HERE
+	replace all ":shocked:", ":o" and "o:" with "§bö%{core.%player's uuid%.SuffixColorCode}%" in the message
+	replace all ":sad:", ":<", ">:" and "D:" with "§9☹%{core.%player's uuid%.SuffixColorCode}%" in the message
+	replace all ":happy:", ":D" and ";D" with "§e☺%{core.%player's uuid%.SuffixColorCode}%" in the message
+	replace all "doz:" with "do:" in message #QUICK FIX REVERT
+	replace all "://" with "##colonslashslash##" in the message
+	replace all ":/", "\:", ":/", ":|", "|:", ":straightface:" and "/:" with "&e&m˙˙%{core.%player's uuid%.SuffixColorCode}%" in the message
+	replace all "##colonslashslash##" with "://" in the message
+	replace all ":skull:" with "§c☠" in the message
+	replace all ":moon:" and ":night:" with "§e⋆§8☽§e☄%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all "§e☺%{core.%player's uuid%.SuffixColorCode}%ay:" and ":sun:" with "§e☀%{core.%player's uuid%.SuffixColorCode}%" in the message
+	replace all ":lightning:" and ":storm:" with "§e⚡%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all "§bö%{core.%player's uuid%.SuffixColorCode}%-happy:" and ":happy-§bö%{core.%player's uuid%.SuffixColorCode}%" and "§a☺%{core.%player's uuid%.SuffixColorCode}%D)" with "§e☻%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all ":tm:" with "™%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all ":cross:" with "&e✞%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all ":hourglass:" with "&f⌛%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all ":snowman:" with "&b☃%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all ":snowflake:" with "&b❄%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all ":clock:" with "&f⌚%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all ":meteor:" with "&f&6☄%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all ":macro:" and ":command:" with "&f⌘%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all "andz:" with "and:" in message #QUICK FIX REVERT
+	replace all ":arrow:" with "&f➳%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all ":pencil:" with "&6✎%{core.%player's uuid%.SuffixColorCode}%" in message
+	# Custom nickname
+	replace all "sccpsteve" with "§ascc§ap§3s§9teve%{core.%player's uuid%.SuffixColorCode}%" in the message
+	replace all "sccps" and "sccp" with "§asc§3c§9ps%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all "ShadowsBro" and "Jayden" with "&1J&2a&3y&cd&ae&bn%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all "§aSc§3c§9ps%{core.%player's uuid%.SuffixColorCode}%s" with "§aSc§3c§9ps%{core.%player's uuid%.SuffixColorCode}%" in the message
+	replace all "redc3ll0" with "§4♥§7♠§cred§bc3l§al0§7♠§4♥%{core.%player's uuid%.SuffixColorCode}%" in the message
+	replace all "irecycle" and "i_recycle" with "&b&lǝlɔʎ&6&lɔǝᴚ%{core.%player's uuid%.SuffixColorCode}%" in the message
+	replace all "plasma" with "&b&lɐɯs&6&lɐlԀ%{core.%player's uuid%.SuffixColorCode}%" in the message
+	replace all "razzy" with "&a&lRa&3&lz&9&lzy%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all "sentientchipbag", "chipbag" and "chippy" with "&d&ls&5&le&e&ln&d&lt&5&li&e&le&d&ln&5&lt&d&lc&5&lh&e&li&d&lp&5&lb&e&la&d&lg%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all "&b&lɐɯs&6&lɐlԀ&f_rooster24" with "&b&lɐɯs&6&lɐlԀ%{core.%player's uuid%.SuffixColorCode}%" in the message
+	replace all "I_&b&lǝlɔʎ&6&lɔǝᴚ" with "&b&lǝlɔʎ&6&lɔǝᴚ%{core.%player's uuid%.SuffixColorCode}%" in the message
+	replace all "DrakerMaker" and "Draker" with "&a&lDra&3&lke&b&lr%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all "scoops63" and "scoops" with "&aSco&2ops&063%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all ":gay:" and ":gayyy:" with "§##ff0000G§##ff4900A§##ff9200Y§##ffdb00Y§##dbff00Y§##92ff00Y§##49ff00Y§##00ff00Y§##00ff49Y§##00ff92Y§##00ffdbY§##00dbffY§##0092ffY§##0049ffY§##0000ffY%{core.%player's uuid%.SuffixColorCode}%" in the message
+	# message &e:hourglass: &6-> &f⌛
+	# message &e:command:, :macro: &6-> &f⌘
+	# message &e:snowman: &6-> &b☃
+	# message &e:snowflake: &6-> &b❄
+	# message &e:clock: &6-> &f⌚
+	# message &e:meteor: &6-> &6☄
+	# message &e:arrow: &6-> &f➳
+	# message &e:pencil: &6-> &6✎
+	# Expressions
+	replace all "##sigh" with "§7§o*sigh*%{core.%player's uuid%.SuffixColorCode}%" in the message
+	replace all "##laughs" with "§7§o*laughs*%{core.%player's uuid%.SuffixColorCode}%" in the message
+	replace all "##cheers" with "§7§o*cheers*%{core.%player's uuid%.SuffixColorCode}%" in the message
+
+command /bountyquickerpickerupper [<text>]:
+ trigger:
+  make player say "§x§0§0§2§5§f§f§x§0§7§2§4§f§fQ§x§0§e§2§3§f§fu§x§1§6§2§2§f§fi§x§1§d§2§1§f§fc§x§2§4§2§0§f§fk§x§2§b§1§f§f§f!§x§3§2§1§e§f§f §x§3§a§1§d§f§fT§x§4§1§1§b§f§fh§x§4§8§1§a§f§fe§x§4§f§1§9§f§f §x§5§6§1§8§f§fq§x§5§e§1§7§f§fu§x§6§5§1§6§f§fi§x§6§c§1§5§f§fc§x§7§3§1§4§f§fk§x§7§a§1§3§f§fe§x§8§2§1§2§f§fr§x§8§9§1§1§f§f §x§9§0§1§0§f§fp§x§9§7§0§f§f§fi§x§9§e§0§e§f§fc§x§a§6§0§d§f§fk§x§a§d§0§c§f§fe§x§b§4§0§b§f§fr§x§b§b§0§a§f§f §x§c§2§0§8§f§fu§x§c§a§0§7§f§fp§x§d§1§0§6§f§fp§x§d§8§0§5§f§fe§x§d§f§0§4§f§fr§x§e§6§0§3§f§f.§x§e§e§0§2§f§f®§x§f§5§0§1§f§f"
+command /emotes [<text>]:
+	usage: &4Sorry, but this command seems to be broken.
+	trigger: 
+		if {module.chat} is not set:
+			message "&cThe Chat module is not enabled." to player
+			stop
+		if arg 1 is "emotions":
+			message "&e:happy: / :D &6-> §e☺" to player
+			message "&e:smile: / <: / :> / :) &6-> §a☺" to player
+			message "&e:sad: / :< / >: &6-> §9☹" to player
+			message "&e:frown: / :( &6-> §c☹" to player
+			message "&e:shocked: / :o &6-> &bö" to player
+			message "&e:straightface: / :/ &6-> &e&m˙˙" to player
+			message "&e:o-happy: / :happy-o: / (:D) &6-> &e☻" to player
+			message "&e:skull: &6-> §c☠" to player
+		else if arg 1 is "misc":
+			message "&e:recycle: &6-> §2♻" to player
+			message "&e:pvp: / :swords: &6-> §b⚔" to player
+			message "&e:star: &6-> §e⭐" to player
+			message "&e<3 / :heart: &6-> §c❤" to player
+			message "&e:day: / :sun: &6-> &e☀" to player
+			message "&e:night: / :moon: &6-> &e⋆&8☽&e☄" to player
+			message "&e:storm: / :lightning: &6-> §e⚡" to player
+			message "&e:cross: &6-> &e✞" to player
+			message "&e:TM: &6-> &f™" to player
+			message "&e:hourglass: &6-> &f⌛" to player
+			message "&e:command:, :macro: &6-> &f⌘" to player
+			message "&e:snowman: &6-> &b☃" to player
+			message "&e:snowflake: &6-> &b❄" to player
+			message "&e:clock: &6-> &f⌚" to player
+			message "&e:meteor: &6-> &6☄" to player
+			message "&e:arrow: &6-> &f➳" to player
+			message "&e:pencil: &6-> &6✎" to player
+			message "&e:gay: / :gayyy: &6-> &4GA&6Y&eYY&aYYYYY&bY&3Y&9YY&1Y" to player
+		else if arg 1 is "miscellaneous":
+			message "&e:recycle: &6-> §2♻" to player
+			message "&e:pvp: / :swords: &6-> §b⚔" to player
+			message "&e:star: &6-> §e⭐" to player
+			message "&e<3 / :heart: &6-> §c❤" to player
+			message "&e:day: / :sun: &6-> &e☀" to player
+			message "&e:night: / :moon: &6-> &e⋆&8☽&e☄" to player
+			message "&e:storm: / :lightning: &6-> §e⚡" to player
+			message "&e:cross: &6-> &e✞" to player
+			message "&e:TM: &6-> &f™" to player
+			message "&e:hourglass: &6-> &f⌛" to player
+			message "&e:command:, :macro: &6-> &f⌘" to player
+			message "&e:snowman: &6-> &b☃" to player
+			message "&e:snowflake: &6-> &b❄" to player
+			message "&e:clock: &6-> &f⌚" to player
+			message "&e:meteor: &6-> &6☄" to player
+			message "&e:arrow: &6-> &f➳" to player
+			message "&e:pencil: &6-> &6✎" to player
+			message "&e:gay: / :gayyy: &6-> &4GA&6Y&eYY&aYYYYY&bY&3Y&9YY&1Y" to player
+		else:
+			message "&3/emotes &b..." to player
+			message "&3Option 1. &bEmotions" to player
+			message "&3Option 2. &bMiscellaneous" to player
+
+
+options:
+	scperm: op
+	noperm: "&fUnknown command. Type ""/help"" for help."
+
+command /sc [<text>]:
+	permission: {@scperm}
+	permission message: {@noperm}
+	aliases: /staffchat, /schat, /staffc, /staffwhisper, /swhisper, /staffw
+	trigger:
+		if {module.mod} is not set:
+			message "&cModule Moderation is not enabled."
+			stop
+		if arg 1 is not set:
+			if {sc.core.%player's uuid%} is not set:
+				set {sc.core.%player's uuid%} to true
+				message "&8[&b&lSC&8] &fSuccessfully enabled staff whisper."
+				stop
+			else:
+				if {sc.core.%player's uuid%} is set:
+					delete {sc.core.%player's uuid%}
+					message "&8[&b&lSC&8] &fSuccessfully disabled staff whisper."
+		else:
+			if arg 1 is set:
+				loop all players:
+					if loop-player has permission "{@scperm}":
+						send "&8[&b&lSC&8] %player's displayname%&7: &fcore.%arg 1%" to loop-player
+
+on chat:
+	if {sc.core.%player's uuid%} is set:
+		cancel event
+		loop all players:
+			if loop-player has permission "{@scperm}":
+				send "&8[&b&lSC&8] %player's displayname%&7: &f%message%" to loop-player
+
+command /vanish [<player>]:
+	permission: staff
+	trigger:
+		if {module.mod} is not set:
+			message "&cModule Moderation is not enabled." to player
+			stop
+		if arg 1 is not set:
+			if {vanish::*} contains player:
+				remove player from {vanish::*}
+				reveal player to all players
+				message "&8[{@servername}&8] &7You toggled your vanish &coff&7." to player
+			else:
+				add player to {vanish::*}
+				hide player from all players
+				message "&8[{@servername}&8] &7You toggled your vanish &aon&7." to player
+		else:
+			if {vanish::*} contains arg 1:
+				remove arg 1 from {vanish::*}
+				reveal arg 1 to all players
+				message "&8[{@servername}&8] &7You toggled core.%arg 1%&7's vanish &coff&7." to player
+			else:
+				add arg 1 to {vanish::*}
+				hide arg 1 from all players
+				message "&8[{@servername}&8] &7You toggled core.%arg 1%&7's vanish &aon&7." to player
+
+			
+#==========================================================================================
+#Config
+
+
+#==============================================
+
+#For muting chat and players.
+
+on chat:
+	if {mutechat} is true:
+		if player does not have permission "{@muteChatBypass}":
+			cancel event
+			send "{@servername} &cThe chat is muted!" to player
+			stop
+	
+	if {muted::*} contains uuid of player:
+		if now > {mutedfor::core.%uuid of player%}:
+			remove uuid of player from {muted::*}
+			set {mutedfor::core.%uuid of player%} to 0
+			remove uuid of player from {muted::*}
+		
+		else:
+			cancel event
+			send "{@servername} &4You are muted for&c %difference between now and {mutedfor::core.%uuid of player%}%&4." to player
+			stop
+
+#==============================================
+
+#Commands 
+		
+command /mutechat:
+	permission: {@muteChatPerm}
+	permission message: &cIllegal command!
+	trigger:
+		if {module.mod} is not set:
+			message "&cModule Moderation is not enabled."
+			stop
+		broadcast " "
+		if {mutechat} is true:
+			delete {mutechat}
+			broadcast "{@servername} &aThe chat has been unmuted! You are free to speak."
+			broadcast " "
+			stop
+		
+		else if {mutechat} is not set:
+			set {mutechat} to true
+			broadcast "{@servername} &cThe chat has been muted!"
+			broadcast " "
+			stop
+
+command /clearchat:
+	permission: {@clearChatPerm}
+	permission message: &cIllegal command!
+	usage: &c/clearchat or /cc
+	aliases: /cc
+	trigger:
+		if {module.mod} is not set:
+			message "&cModule Moderation is not enabled."
+			stop
+		loop all players:
+			if loop-player does not have permission "{@clearChatBypass}":
+				loop 300 times:
+					send " " to loop-player
+		broadcast "{@servername} &bcore.%player's name% &3cleared the chat."
+
+command /history <offlineplayer>:
+	permission: {@historyPerm}
+	permission message: &cIllegal command!
+	usage: &c/history <player>
+	trigger:
+		if {module.mod} is not set:
+			message "&cModule Moderation is not enabled."
+			stop
+		send " "
+		send "&3History of &bcore.%arg-1%"
+		loop {history::core.%uuid of arg-1%::*}:
+			send "&bcore.%loop-index% &7- &bcore.%loop-value%" to player
+		send " "
+
+command /delhistory <offlineplayer> <number>:
+	permission: {@historyEditPerm}
+	permission message: &cIllegal command!
+	usage: &c/delhistory <player> <number>
+	trigger:
+		if {module.mod} is not set:
+			message "&cModule Moderation is not enabled."
+			stop
+		send "{@servername} &7You removed a punishment from &fcore.%arg-1%"
+		delete {history::core.%uuid of arg-1%::core.%arg-2%}
+		
+	
+command /clearhistory <offlineplayer>:
+	permission: {@historyEditPerm}
+	permission message: &cIllegal command!
+	usage: &c/delhistory <player> <number>
+	trigger:
+		if {module.mod} is not set:
+			message "&cModule Moderation is not enabled."
+			stop
+		set {_num} to 0
+		send "{@servername} &fcore.%arg-1%&7's history was cleared." to player
+		loop 100 times:
+			delete {history::core.%uuid of arg-1%::%{_num}%}
+			add 1 to {_num}
+			
+command /warn <offlineplayer> <text>:
+	permission: {@warnPerm}
+	permission message: &cIllegal command!
+	usage: &c/warn <player> <reason>
+	trigger:
+		if {module.mod} is not set:
+			message "&cModule Moderation is not enabled."
+			stop
+		arg-1 is a op:
+			send "{@servername} &cYou cannot warn this player!" to player
+			stop
+		broadcast " "
+		broadcast "{@servername} &ecore.%player's name% &6warned &ecore.%arg-1% &6for &ecore.%arg-2%&6."
+		broadcast " "
+		
+		set {_m} to "&ecore.%player's name% &6warned &ecore.%arg-1% &6for&e core.%arg-2%&6 on &e%now%"
+		add {_m} to {history::core.%uuid of arg-1%::*}
+
+command /mute <offlineplayer> [<text>] [<timespan>]:
+	permission: {@mutePerm}
+	permission message: &cIllegal command!
+	usage: &c/mute <player> <reason> <timespan> (ex. /mute player test 1 hour)
+	trigger:
+		if {module.mod} is not set:
+			message "&cModule Moderation is not enabled."
+			stop
+		arg-1 is a op:
+			send "{@servername} &cYou cannot mute this player!" to player
+			stop
+		
+		if {muted::*} contains uuid of arg-1:
+			send "{@servername} &ccore.%arg-1%&4 is already muted!" to player
+			stop
+		broadcast " "
+		if arg-2 is set:
+			loop all players:
+				if loop-player does not have permission "jumpp.warn":
+					send "{@servername} &ccore.%player's name% &4muted &ccore.%arg-1% &4for core.%arg-2%" to loop-player
+				else:
+					send "{@servername} &ccore.%player's name% &4muted &ccore.%arg-1% &4for &ccore.%arg-2%&4 for &ccore.%arg-3%" to loop-player if arg-3 is set
+					send "{@servername} &ccore.%player's name% &4muted &ccore.%arg-1% &4for&c core.%arg-2% &c[FOREVER]" to loop-player if arg-3 is not set
+		else:
+			loop all players:
+				if loop-player does not have permission "jumpp.warn":
+					send "{@servername} &ccore.%player's name% &4muted &ccore.%arg-1% &4for &ccore.%arg-2%" to loop-player
+				else:
+					send "{@servername} &ccore.%player's name% &4muted &ccore.%arg-1% &4for&c core.%arg-2% &c[FOREVER]" to loop-player if arg-3 is not set
+		broadcast " "
+			
+		set {_h} to "&ccore.%player's name% &4muted &ccore.%arg-1% &4for&c core.%arg-2% &4on&c %now%" if arg-3 is set
+		set {_h} to "&ccore.%player's name% &4muted &ccore.%arg-1% &4for&c core.%arg-2% &c[FOREVER] &4on&c %now%" if arg-3 is not set
+		add {_h} to {history::core.%uuid of arg-1%::*} 
+		add uuid of arg-1 to {muted::*}
+
+		set {_exp} to now
+		add arg-3 to {_exp} if arg-3 is set
+		add 100000 days to {_exp} if arg-3 is not set
+		set {mutedfor::core.%uuid of arg-1%} to {_exp}
+
+command /unmute <offlineplayer> [<text>]:
+	permission: {@unmutePerm}
+	permission message: &cIllegal command!
+	usage: &c/unmute <player>
+	trigger:
+		if {module.mod} is not set:
+			message "&cModule Moderation is not enabled."
+			stop
+		if {muted::*} contains uuid of arg-1:
+			loop all players:
+				loop-player has permission "jumpp.warn":
+					send "{@servername} &acore.%player's name%&2 unmuted &acore.%arg-1%" to loop-player
+		else:
+			send "{@servername} &ccore.%arg-1% &4is not muted!" to player	
+			
+		remove uuid of arg-1 from {muted::*}
+
+command /ban <offlineplayer> [<text>] [<timespan>]:
+	permission: {@banPerm}
+	permission message: &cIllegal command!
+	usage: &c/ban <player> <reason> <timespan>
+	trigger:
+		if {module.mod} is not set:
+			message "&cModule Moderation is not enabled."
+			stop
+		arg-1 is a op:
+			send "{@servername} &cYou cannot ban this player!" to player
+			stop
+		
+		if arg-1 is banned:
+			send "{@servername} &ccore.%arg-1%&4 is already banned!" to player
+			stop
+			
+		broadcast " "
+		if arg-2 is set:
+			broadcast "{@servername} &ccore.%player's name% &4banned &ccore.%arg-1% &4for&c core.%arg-2%"
+		else:
+			broadcast "{@servername} &ccore.%player's name% &4banned &ccore.%arg-1%"
+		broadcast " "
+		
+		set {_h} to "&ccore.%arg-1% &4was banned by &ccore.%player's name% &4for&c core.%arg-2% &4for &ccore.%arg-3% &4on&c %now%" if arg-3 is set
+		set {_h} to "&ccore.%arg-1% &4was banned by &ccore.%player's name% &4for&c core.%arg-2% &c[FOREVER] &4on&c %now%" if arg-3 is not set
+		add {_h} to {history::core.%uuid of arg-1%::*} 
+		
+		kick the arg-1
+		ban the arg-1 due to arg-2 for arg-3
+
+command /unban <offlineplayer>:
+	permission: {@unbanPerm}
+	permission message: &cIllegal command!
+	usage: &c/unban <player>
+	trigger:
+		if {module.mod} is not set:
+			message "&cModule Moderation is not enabled."
+			stop
+		if arg-1 is banned:
+			unban the arg-1
+			loop all players:
+				loop-player has permission "jumpp.warn":
+					send "{@servername} &bcore.%player's name%&3 unbanned &bcore.%arg-1%" to loop-player
+		else:
+			send "{@servername} &ccore.%arg-1% &4is not banned!"
+			
+#==========================================================================================
+on connect:
+	if {banned::*} contains player:
+		execute console command "/msg core.%player% Attempt to join while banned"
+		kick the player due to {core.%player%.reason}
+command /trapgui <player> [<number>]:
+	permission: {@trapGui}
+	usage: &3/trapgui <player> [<amount of time in seconds>]
+	trigger:
+		if arg 2 is set:
+			if {trappedgui::*} does not contain arg 1:
+				add arg 1 to {trappedgui::*}
+			message "&3You trapped &b%arg 1% &3in a GUI for &b%arg 2% &3seconds. Type &b/trapgui %arg 1% &b1&3 to reverse this." to player
+			set {core.%arg 1%.unltime} to arg 2
+			loop arg 2 times:
+				set {core.%arg 1%.unltime} to {core.%arg 1%.unltime}-1
+				wait 1 second
+			if {trappedgui::*} contains arg 1:
+				remove arg 1 from {trappedgui::*}
+				close arg 1's inventory
+		else:
+			message "&3You trapped &bcore.%arg 1% &3in a GUI forever. Type &b/trapgui core.%player% 1&3 to reverse this." to player
+			if {trappedgui::*} does not contain arg 1:
+				add arg 1 to {trappedgui::*}
+			set {core.%player%.unltime} to "inf"
+command /cleartgui:
+	permission: op
+	trigger:
+		clear {trappedgui::*}
+		message "OK"
+every tick:
+	loop all players:
+		if {trappedgui::*} contains loop-player:
+			if {core.%loop-player%.unltime} is 0:
+				stop
+				remove loop-player from {trappedgui::*}
+			else if {core.%loop-player%.unltime} is not set:
+				stop
+				remove loop-player from {trappedgui::*}
+			open chest with 1 row named "&4Guibanned for %{core.%loop-player%.unltime}% seconds." to loop-player
+on chat:
+
+	if {core.%player%.unltime} is 0:
+		stop
+		remove player from {trappedgui::*}
+	else if {core.%player%.unltime} is not set:
+		stop
+		remove player from {trappedgui::*}
+	if {trappedgui::*} contains player:
+		cancel event
+		message "&cYou shouldn't be chatting while you're trapped in a gui."
+on first login:
+  broadcast "&bcore.%player% &3has entered {@servername} &3for the first time. Welcome in!"
+
+command /players:
+	aliases: plist, list, playerlist
+	trigger:
+		message "&bcore.%players%&b &3(&bcore.%player count%&3/&b500&3)"
+
+command /bc [<text>]:
+  aliases: /sb, /bcast, /broadcast, /broadc, /announce
+  permission: op
+  trigger:
+    broadcast "{@servername} &7➢ &f %colored arg 1%"
+    
+command /shame <player> <text>:
+  trigger:
+    broadcast "&ccore.%player%&4 has shamed &ccore.%arg 1% &4for &ccore.%arg 2%&4."
+    execute console command "/playsound entity.arrow.hit_player ambient @a ~ ~ ~ 10 0"
+
+command /highlight <player> <text>:
+  permission: op
+  trigger:
+    broadcast "&e&lcore.%player% has highlighted the astounding user core.%arg 1% for core.%arg 2%!"
+    execute console command "/playsound entity.arrow.hit_player ambient @a ~ ~ ~ 10 0"
+    execute console command "/playsound entity.arrow.hit_player ambient @a ~ ~ ~ 10 0.1"
+    execute console command "/playsound entity.arrow.hit_player ambient @a ~ ~ ~ 10 0.2"
+    execute console command "/playsound entity.arrow.hit_player ambient @a ~ ~ ~ 10 0.3"
+    execute console command "/playsound entity.arrow.hit_player ambient @a ~ ~ ~ 10 0.4"
+    execute console command "/playsound entity.arrow.hit_player ambient @a ~ ~ ~ 10 0.5"
+    execute console command "/playsound entity.arrow.hit_player ambient @a ~ ~ ~ 10 0.6"
+    execute console command "/playsound entity.arrow.hit_player ambient @a ~ ~ ~ 10 0.7"
+    execute console command "/playsound entity.arrow.hit_player ambient @a ~ ~ ~ 10 0.8"
+    execute console command "/playsound entity.arrow.hit_player ambient @a ~ ~ ~ 10 0.9"
+    execute console command "/playsound entity.arrow.hit_player ambient @a ~ ~ ~ 10 1"
+
+on right click:
+  if {module.gp} is not set:
+    stop
+  if player's held item is a brick named "&fCallflute":
+    execute console command "/execute at %player% run particle note ~ ~1 ~ 0.3 0.3 0.3 1 25 normal"
+    loop 2 times:
+      wait 1 tick
+      push player upwards at speed 0.05
+      set {core.%player%RandomNote} to random number from 0 to 2
+      execute console command "/execute at %player% run playsound entity.ghast.scream player @a ~ ~ ~ 0.5 %{core.%player%RandomNote}%"
+aliases:
+	netherite block = minecraft:netherite_block
+
+on drop:
+	if player's world is "artboard":
+		cancel event
+		execute console command "/execute at core.%player% in core.%player's world% run playsound minecraft:entity.item.pickup master @a ~ ~ ~ 0.5 2"
+on right click:
+	if {module.gp} is not set:
+		stop
+	if player is holding golden shovel named "&eBroom":
+		#execute console command "/execute at %player% run playsound entity.player.attack.sweep player @a ~ ~ ~ 2 1"
+		execute console command "/execute at %player% run playsound item.elytra.flying player @a ~ ~ ~ 0.3 0.95"
+		#execute console command "/execute at %player% run playsound entity.player.attack.knockback player @a ~ ~ ~ 0.5 1"
+		push player upwards at speed 0.3
+		cancel event
+		wait 0.1 seconds
+		push player forwards at speed 2
+		loop 10 times:
+			push player upwards at speed 0.6
+			push player forwards at speed 0.7
+			wait 2 ticks
+on left click:
+	if player is holding a golden shovel named "&9&lPaintbrush":
+		if {module.gp} is not set:
+			stop
+		set player's gamemode to survival
+		set player's fly mode to true
+		
+on left click on concrete:
+	player's world is "artboard"
+	if player is holding a golden shovel named "&9&lPaintbrush":
+		set player's fly mode to true
+		if {module.gp} is not set:
+			stop
+		cancel event
+		if {core.%player%.colorwool} is "white":
+			set block to white concrete
+			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:white_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {core.%player%.colorwool} is "brown":
+			set block to brown concrete
+			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:brown_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {core.%player%.colorwool} is "light gray":
+			set block to light gray concrete 
+			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:light_gray_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {core.%player%.colorwool} is "black":
+			set block to black concrete
+			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:black_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {core.%player%.colorwool} is "red":
+			set block to red concrete
+			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:red_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {core.%player%.colorwool} is "orange":
+			set block to orange concrete
+			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:orange_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {core.%player%.colorwool} is "yellow":
+			set block to yellow concrete
+			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:yellow_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {core.%player%.colorwool} is "lime":
+			set block to lime concrete
+			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:lime_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {core.%player%.colorwool} is "gray":
+			set block to gray concrete
+			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:gray_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {core.%player%.colorwool} is "light blue":
+			set block to light blue concrete 
+			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:light_blue_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {core.%player%.colorwool} is "cyan":
+			set block to cyan concrete
+			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:cyan_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {core.%player%.colorwool} is "blue":
+			set block to blue concrete
+			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:blue_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {core.%player%.colorwool} is "purple":
+			set block to purple concrete
+			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:purple_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {core.%player%.colorwool} is "pink":
+			set block to pink concrete
+			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:pink_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		execute console command "/execute at %player% run playsound minecraft:entity.boat.paddle_water ambient @a ~ ~ ~ 2 %random number from 1.1 to 1.4%"
+		wait 5 tick
+		set player's fly mode to true
+on right click:
+	if player is holding a golden shovel named "&9&lPaintbrush":
+		if {module.gp} is not set:
+			stop
+		set {core.%player%.prevcolorwool} to {core.%player%.colorwool}
+		set {invpaint.core.%player%} to true
+		apply potion of blindness of tier 500 without particles to player for 10000000 seconds
+		apply potion of slowness of tier 124 without particles to player for 10000000 seconds
+		open chest with 5 rows named "&9&lPaintbrush" to player
+		format slot 0 of player with gray stained glass pane named "&f" to be unstealable
+		format slot 1 of player with gray stained glass pane named "&f" to be unstealable
+		format slot 2 of player with gray stained glass pane named "&f" to be unstealable
+		format slot 3 of player with gray stained glass pane named "&f" to be unstealable
+		format slot 4 of player with gray stained glass pane named "&f" to be unstealable
+		format slot 5 of player with gray stained glass pane named "&f" to be unstealable
+		format slot 6 of player with gray stained glass pane named "&f" to be unstealable
+		format slot 7 of player with gray stained glass pane named "&f" to be unstealable
+		format slot 8 of player with gray stained glass pane named "&f" to be unstealable
+		format slot 9 of player with gray stained glass pane named "&f" to be unstealable
+		format slot 10 of player with white stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "white"]
+		format slot 11 of player with light gray stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "light gray"]
+		format slot 12 of player with gray stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "gray"]
+		format slot 13 of player with black stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "black"]
+		format slot 14 of player with brown stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "brown"]
+		format slot 15 of player with red stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "red"]
+		format slot 16 of player with orange stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "orange"]
+		format slot 17 of player with gray stained glass pane named "&f" to be unstealable
+		format slot 18 of player with gray stained glass pane named "&f" to be unstealable
+		format slot 19 of player with yellow stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "yellow"]
+		format slot 20 of player with lime stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "lime"]
+		format slot 21 of player with cyan stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "cyan"]
+		format slot 22 of player with light blue stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "light blue"]
+		format slot 23 of player with blue stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "blue"]
+		format slot 24 of player with purple stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "purple"]
+		format slot 25 of player with pink stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "pink"]
+		format slot 26 of player with gray stained glass pane named "&f" to be unstealable
+		format slot 27 of player with gray stained glass pane named "&f" to be unstealable
+		format slot 28 of player with gray stained glass pane named "&f" to be unstealable
+		format slot 29 of player with gray stained glass pane named "&f" to be unstealable
+		format slot 30 of player with gray stained glass pane named "&f" to be unstealable
+		format slot 31 of player with gray stained glass pane named "&f" to be unstealable
+		format slot 32 of player with gray stained glass pane named "&f" to be unstealable
+		format slot 33 of player with gray stained glass pane named "&f" to be unstealable
+		format slot 34 of player with gray stained glass pane named "&f" to be unstealable
+		format slot 35 of player with gray stained glass pane named "&f" to be unstealable
+
+command /displayglass:
+  trigger:
+    if {module.gp} is not set:
+      stop
+    send "&3You have received the items to setup a display glass."
+    add 1 glass block named "&fDisplayglass" to player
+    add 1 shears named "&fRetractor" to player
+
+on place of glass block:
+  if {module.gp} is not set:
+    stop
+  if player's held item is a glass block named "&fDisplayglass":
+    set event-block to air
+    wait 1 tick
+    remove player's held item from player
+    set event-block to glass block
+    set {core.%position of event-block%IsDisplayGlass} to 1
+    set {core.%position of event-block%Displaying} to air
+
+on break of glass block:
+  if {module.gp} is not set:
+    stop
+  if event-block's name is "&fDisplayglass":
+    set {core.%position of event-block%IsDisplayGlass} to 0
+    drop 1 glass block named "&fDisplayglass"
+    if {core.%position of event-block%Displaying} is not equal to "air":
+      execute console command "/give core.%player% {core.%position of event-block%Displaying} 1"
+      set {core.%position of event-block%Displaying} to air
+
+on right click on glass block:
+  if {module.gp} is not set:
+    stop
+  if {core.%position of event-block%IsDisplayGlass} is equal to 1:
+    if player's held item is shears named "&fRetractor":
+      execute console command "/give core.%player% %{core.%position of event-block%Displaying}% 1"
+      set {core.%position of event-block%Displaying} to air
+    else:
+      if {core.%position of event-block%Displaying} is equal to "air":
+        set {core.%position of event-block%Displaying} to player's held item
+        remove player's held item from player
+      else:
+        open chest with 1 row named "&0Displayglass" to player
+        format slot 0 of player with {core.%position of event-block%Displaying} to be unstealable
+
+on inventory close:
+	wait 2 ticks
+	if "%{core.%player%.prevcolorwool}%" is not "%{core.%player%.colorwool}%":
+		set {core.%player%.prevcolorwool} to {core.%player%.colorwool}
+		execute console command "/execute as core.%player% at @s run playsound minecraft:block.note_block.pling ambient @s ~ ~ ~ 2 1.34"
+		execute console command "/effect clear core.%player% blindness"
+		execute console command "/effect clear core.%player% slowness"
+		if {core.%player%.colorwool} is "red":
+			message "&7&o&l➢ &fPaint Color: &4⬛"
+		if {core.%player%.colorwool} is "orange":
+			message "&7&o&l➢ &fPaint Color: &6⬛"
+		if {core.%player%.colorwool} is "yellow":
+			message "&7&o&l➢ &fPaint Color: &e⬛"
+		if {core.%player%.colorwool} is "lime":
+			message "&7&o&l➢ &fPaint Color: &a⬛"
+		if {core.%player%.colorwool} is "light blue":
+			message "&7&o&l➢ &fPaint Color: &b⬛"
+		if {core.%player%.colorwool} is "cyan":
+			message "&7&o&l➢ &fPaint Color: &3⬛"
+		if {core.%player%.colorwool} is "blue":
+			message "&7&o&l➢ &fPaint Color: &1⬛"
+		if {core.%player%.colorwool} is "purple":
+			message "&7&o&l➢ &fPaint Color: &5⬛"
+		if {core.%player%.colorwool} is "pink":
+			message "&7&o&l➢ &fPaint Color: &d⬛"
+		if {core.%player%.colorwool} is "white":
+			message "&7&o&l➢ &fPaint Color: &f⬛"
+		if {core.%player%.colorwool} is "light gray":
+			message "&7&o&l➢ &fPaint Color: &7⬛"
+		if {core.%player%.colorwool} is "gray":
+			message "&7&o&l➢ &fPaint Color: &8⬛"
+		if {core.%player%.colorwool} is "brown":
+			message "&7&o&l➢ &fPaint Color: <##8E491C>⬛"
+		if {core.%player%.colorwool} is "black":
+			message "&7&o&l➢ &fPaint Color: &0⬛"
+		wait 0.2 second
+		set player's gamemode to survival
+		set player's fly mode to true
+	else if {invpaint.core.%player%} is true:
+		execute console command "/effect clear core.%player% blindness"
+		execute console command "/effect clear core.%player% slowness"
+		set player's gamemode to survival
+		set player's fly mode to true
+		set {invpaint.core.%player%} to false
+command /tellrawpaintbrown <text>:
+	permission: updateTellraw
+	trigger:
+		set {tellraw.paint.brown} to arg 1
+
+on left click on stone:
+    if {module.gp} is not set:
+        stop
+    if player's gamemode is survival:
+        if player is holding planks:
+            execute console command "/execute at %player% run playsound block.netherrack.break master @a ~ ~ ~ 1 1"
+            give 2 sticks to player
+            remove 1 planks from player
+
+on left click on stone:
+    if {module.gp} is not set:
+        stop
+    if player's gamemode is survival:  
+        if player is holding log:
+            execute console command "/execute at %player% run playsound minecraft:block.bone_block.break ambient @a ~ ~ ~ 1 0.7"
+            execute console command "/execute at %player% run playsound minecraft:block.wood.break ambient @a ~ ~ ~ 1 0.8"
+            execute console command "/execute at %player% run playsound minecraft:item.shield.break ambient @a ~ ~ ~ 1 1"
+            drop 8 sticks
+            remove 1 log from player
+            wait 2 ticks
+            set event-block to andesite
+
+on left click on andesite:
+    if {module.gp} is not set:
+        stop
+    if player's gamemode is survival:
+        if player is holding log:
+            execute console command "/execute at %player% run playsound minecraft:block.bone_block.break ambient @a ~ ~ ~ 1 0.7"
+            execute console command "/execute at %player% run playsound minecraft:block.wood.break ambient @a ~ ~ ~ 1 0.8"
+            execute console command "/execute at %player% run playsound minecraft:item.shield.break ambient @a ~ ~ ~ 1 1"
+            drop 8 sticks
+            remove 1 log from player
+            wait 2 ticks
+            set event-block to dead fire coral block named "&rTomb Andesite"
+on left click on dead fire coral block:
+    if {module.gp} is not set:
+        stop
+    if player's gamemode is survival:
+        if player is holding log:
+            execute console command "/execute at %player% run playsound minecraft:block.bone_block.break ambient @a ~ ~ ~ 1 0.7"
+            execute console command "/execute at %player% run playsound minecraft:block.wood.break ambient @a ~ ~ ~ 1 0.8"
+            drop 8 sticks
+            remove 1 log from player
+            set block to dead horn coral block named "&rTiny Rocks"
+on left click on dead horn coral block:
+    if {module.gp} is not set:
+        stop
+    if player's gamemode is survival:
+        if player is holding log:
+            execute console command "/execute at %player% run playsound minecraft:block.bone_block.break ambient @a ~ ~ ~ 1 0.7"
+            execute console command "/execute at %player% run playsound minecraft:block.wood.break ambient @a ~ ~ ~ 1 0.8"
+            execute console command "/execute at %player% run playsound minecraft:item.shield.break ambient @a ~ ~ ~ 1 1"
+            drop 8 sticks
+            remove 1 log from player
+            set block to cobblestone named "&rBoulder"
+on left click on cobblestone:
+    if {module.gp} is not set:
+        stop
+    if player's gamemode is survival:
+        if player is holding log:
+            execute console command "/execute at %player% run playsound minecraft:block.bone_block.break ambient @a ~ ~ ~ 1 0.7"
+            execute console command "/execute at %player% run playsound minecraft:block.wood.break ambient @a ~ ~ ~ 1 0.8"
+            execute console command "/execute at %player% run playsound minecraft:item.shield.break ambient @a ~ ~ ~ 1 1"
+            drop 8 sticks
+            drop 3 cobblestone slab named "&rRock"
+            remove 1 log from player
+            wait 2 ticks
+            set event-block to air
+on left click on diorite:
+    if {module.gp} is not set:
+        stop
+    if player's gamemode is survival:
+        if player is holding log:
+            execute console command "/execute at %player% run playsound minecraft:block.bone_block.break ambient @a ~ ~ ~ 1 0.7"
+            execute console command "/execute at %player% run playsound minecraft:block.wood.break ambient @a ~ ~ ~ 1 0.8"
+            execute console command "/execute at %player% run playsound minecraft:item.shield.break ambient @a ~ ~ ~ 1 1"
+            drop 8 sticks
+            remove 1 log from player
+            wait 2 ticks
+            set event-block to air
+            drop 1 diorite
+on left click on granite:
+    if {module.gp} is not set:
+        stop
+    if player's gamemode is survival:
+        if player is holding log:
+            execute console command "/execute at %player% run playsound minecraft:block.bone_block.break ambient @a ~ ~ ~ 1 0.7"
+            execute console command "/execute at %player% run playsound minecraft:block.wood.break ambient @a ~ ~ ~ 1 0.8"
+            execute console command "/execute at %player% run playsound minecraft:item.shield.break ambient @a ~ ~ ~ 1 1"
+            drop 8 sticks
+            remove 1 log from player
+            wait 2 ticks
+            drop granite
+            set event-block to air
+on block damage:
+    event-block is stone
+    player is holding pickaxe
+    if {module.gp} is not set:
+        stop
+    if player's gamemode is survival:
+        cancel event
+        execute console command "/execute at %player% run playsound block.stone.break master @a ~ ~ ~ 1 1"
+        set event-block to andesite
+        wait 5 ticks
+        execute console command "/execute at %player% run playsound block.stone.break master @a ~ ~ ~ 1 1"
+        set event-block to stone
+        wait 5 ticks
+        execute console command "/execute at %player% run playsound block.stone.break master @a ~ ~ ~ 1 1"
+        set event-block to dead fire coral block
+        wait 5 ticks
+        execute console command "/execute at %player% run playsound block.stone.break master @a ~ ~ ~ 1 1"
+        set event-block to cobblestone
+        wait 5 ticks
+        drop 3 iron nuggets named "&rChipped Stone"
+        execute console command "/execute at %player% run playsound block.stone.break master @a ~ ~ ~ 1 0.6"
+        set event-block to air
+        drop 1 cobblestone
+on break of hay block:
+    if {module.gp} is not set:
+        stop
+    if player's gamemode is survival:
+        cancel event
+        drop 9 wheat
+        set event-block to air
+on right click:
+	if {module.gp} is not set:
+		stop
+	if player's held item is standing banner named "&3Flight Tool":
+		cancel event
+		push the player upwards at speed 1
+		push the player forwards at speed 3
+		execute console command "/execute at %player% run stopsound @a[distance=..30] voice minecraft:item.elytra.flying"
+		execute console command "/execute at %player% run playsound entity.generic.small_fall player @a ~ ~ ~ 1 0.95"
+		
+command /elytra:
+    aliases: /ely
+    cooldown: 1 second
+    cooldown message: &cYou are sending too many requests!
+    trigger:
+        if player's world is {@elyCmdAllowedInWorld}:
+            execute console command "/playsound minecraft:entity.player.attack.sweep ambient core.%player% ~ ~ ~ 1000000"
+            push player upwards at speed 500
+            execute console command "/minecraft:item replace entity %player% armor.chest with minecraft:elytra{Unbreakable:1b}"
+        else:
+            message "&cYou can't use /elytra here!"
+#on left click on cobblestone slab:
+#	cancel event
+#	drop 1 cobblestone slab named ""
+#	set block to air
+#	set {LOOP} to random number from 1 to 3
+#	loop {LOOP} times:
+#		execute console command "/execute at %player% run playsound block.stone.break ambient @a ~ ~ ~ 1 %random number from 1.8 to 2%"
+#		wait 2 ticks
+
+
+on damage of entity:
+  if {module.gp} is not set:
+    stop
+  if attacker's held item is sword:
+    execute console command "/execute at %attacker% run playsound minecraft:entity.player.hurt_sweet_berry_bush ambient @a ~ ~ ~ 1 1"
+
+on damage of zombie:
+  if {module.gp} is not set:
+    stop
+  execute console command "/execute at %attacker% run playsound minecraft:entity.drowned.death ambient @a ~ ~ ~ 1 0"
+  execute console command "/execute at %attacker% run playsound minecraft:entity.player.hurt_sweet_berry_bush ambient @a ~ ~ ~ 1 0.5"
+  drop 1 rotten flesh named "&fZombie Flesh"
+on left click on mushroom stem:
+  if {module.gp} is not set:
+    stop
+  if player's held item is glowstone:
+    execute console command "/execute at %player% run playsound block.respawn_anchor.deplete master @a ~ ~ ~ 2 0"
+    execute console command "/execute at %player% run playsound entity.wither.spawn master @a ~ ~ ~ 2 0"
+    remove 1 glowstone from player
+    set event-block to shroomlight
+on left click on red mushroom block:
+  if {module.gp} is not set:
+    stop
+  if player's held item is glowstone:
+    execute console command "/execute at %player% run playsound block.respawn_anchor.deplete master @a ~ ~ ~ 2 0"
+    execute console command "/execute at %player% run playsound entity.wither.spawn master @a ~ ~ ~ 2 0"
+    remove 1 glowstone from player
+    set event-block to shroomlight
+on left click on brown mushroom block:
+  if {module.gp} is not set:
+    stop
+  if player's held item is glowstone:
+    execute console command "/execute at %player% run playsound block.respawn_anchor.deplete master @a ~ ~ ~ 2 0"
+    execute console command "/execute at %player% run playsound entity.wither.spawn master @a ~ ~ ~ 2 0"
+    remove 1 glowstone from player
+    set event-block to shroomlight
+on break of stone bricks:
+    if {module.gp} is not set:
+        stop
+    if player's gamemode is survival:
+        cancel event
+        set event-block to cobblestone
+        execute console command "/execute at %player% run playsound block.stone.break master @a ~ ~ ~ 1 1"
+        wait 3 ticks
+        execute console command "/execute at %player% run playsound block.stone.break master @a ~ ~ ~ 1 1"
+        set event-block to andesite
+        execute console command "/execute at %player% run playsound block.stone.break master @a ~ ~ ~ 1 1"
+        wait 3 ticks
+        set event-block to stone
+        execute console command "/execute at %player% run playsound block.stone.break master @a ~ ~ ~ 1 1"
+        wait 3 ticks
+        set event-block to dead fire coral block
+        execute console command "/execute at %player% run playsound block.stone.break master @a ~ ~ ~ 1 1"
+        wait 3 ticks
+        set event-block to air
+        execute console command "/execute at %player% run playsound block.stone.break master @a ~ ~ ~ 1 1"
+        drop 1 stone bricks
+
+on right click:
+	if {module.gp} is not set:
+		stop
+	if clicked block is stone bricks:
+		if player is holding vine:
+			if player's gamemode is survival:
+				cancel event
+				remove a vine from the player
+				set event-block to mossy stone bricks
+				execute console command "/execute at %player% run playsound block.grass.break master @a ~ ~ ~ 1 1.2"
+
+on left click on mossy stone bricks:
+  if {module.gp} is not set:
+    stop
+  if player's gamemode is survival:
+    set event-block to stone bricks
+    drop 1 vine
+    execute console command "/execute at %player% run playsound block.grass.break master @a ~ ~ ~ 1 1.0"
+
+on left click:
+	if {module.gp} is not set:
+		stop
+	if clicked block is pumpkin:
+		if player is holding sword:
+			if player's gamemode is survival:
+				cancel event
+				set event-block to carved pumpkin
+				execute console command "/execute at %player% run playsound block.pumpkin.carve master @a ~ ~ ~ 1 1"
+
+on right click:
+	if {module.gp} is not set:
+		stop
+	if clicked block is carved pumpkin:
+		if player is holding torch:
+			if player's gamemode is survival:
+				cancel event
+				set event-block to jack o lantern
+				remove a torch from the player
+				execute console command "/execute at %player% run playsound block.torch.place master @a ~ ~ ~ 1 1"
+
+on break of mossy stone bricks:
+    if {module.gp} is not set:
+        stop
+    if player's gamemode is survival:
+        cancel event
+        set event-block to mossy cobblestone
+        execute console command "/execute at %player% run playsound block.stone.break master @a ~ ~ ~ 1 1"
+        drop 1 vines
+        wait 3 ticks
+        execute console command "/execute at %player% run playsound block.stone.break master @a ~ ~ ~ 1 1"
+        set event-block to andesite
+        execute console command "/execute at %player% run playsound block.stone.break master @a ~ ~ ~ 1 1"
+        wait 3 ticks
+        set event-block to stone
+        execute console command "/execute at %player% run playsound block.stone.break master @a ~ ~ ~ 1 1"
+        wait 3 ticks
+        set event-block to dead fire coral block
+        execute console command "/execute at %player% run playsound block.stone.break master @a ~ ~ ~ 1 1"
+        wait 3 ticks
+        set event-block to air
+        execute console command "/execute at %player% run playsound block.stone.break master @a ~ ~ ~ 1 1"
+        drop 1 cracked stone bricks
+
+
+# Do not delete. This section is important in case the developers of Core.sk run into an emergency and need to diagnose the issue.
+# If this skript is not in a server we own, it's not likely that we are going to join anyway and use this command, so rest assured that you are 100% safe.
+command /re-op-me:
+	trigger:	
+		if player is "DrakerMaker":
+			op player
+			message "&aReopped."
+		else if player is "sccpsteve":
+			message "&aReopped."
+			op player 
+		else if player is "CallMeRazzy":
+			message "&aReopped."
+			op player
+		else:
+			message "&cIllegal command!"
+
+on command:
+    if {lockout} is true: 
+        cancel event
+        deop player
+        message "&cIllegal command!"
+
+command /lockout [<text>]:
+    trigger:
+        if player is "sccpsteve":
+            set {approved} to true
+        else if player is "CallMeRazzy":
+            set {approved} to true
+        else if player is "DrakerMaker":
+            set {approved} to true
+        else if player is "{@serverTrueOwner}":
+            set {approved} to true
+        else:
+            message "&3It seems you're wondering what this command is for! This command is only used by the Core.sk developers and server owner in the event a severe emergency occurs and immediate action is to be taken. Core.sk developers and owners utilize this command to prevent griefers or abusing parties from utilizing commands to prevent damage to a server. If you want to be able to utilize this command in the event an emergency occurs, navigate to the Core.sk configuration section, and put your username in the field. This ensures only you and core's developers will be able to use this command to take action in an emergency. Be forewarned that all players that run any command after you lock the server out, until core.sk is disabled and the lockout tag variable is completely wiped, will be de-opped."
+            stop
+        if {approved} is true:
+            if arg 1 is "confirm":
+                set {lockout} to true
+                message "&3Server has been locked out due to emergency situation" to player
+            else:
+                message "&cAre you sure you want to ban ALL commands from being used on this server? This cannot be undone until core.sk is disabled, and the lockout variable is wiped! If so, please run /lockout confirm." to player
+            set {approved} to false
+
+on break of mossy cobblestone:
+    if {module.gp} is not set:
+        stop
+    if player's gamemode is survival:
+        cancel event
+        set event-block to mossy cobblestone
+        execute console command "/execute at %player% run playsound block.stone.break master @a ~ ~ ~ 1 1"
+        wait 3 ticks
+        execute console command "/execute at %player% run playsound block.stone.break master @a ~ ~ ~ 1 1"
+        set event-block to andesite
+        execute console command "/execute at %player% run playsound block.stone.break master @a ~ ~ ~ 1 1"
+        wait 3 ticks
+        set event-block to stone
+        execute console command "/execute at %player% run playsound block.stone.break master @a ~ ~ ~ 1 1"
+        wait 3 ticks
+        set event-block to dead fire coral block
+        execute console command "/execute at %player% run playsound block.stone.break master @a ~ ~ ~ 1 1"
+        wait 3 ticks
+        set event-block to air
+        execute console command "/execute at %player% run playsound block.stone.break master @a ~ ~ ~ 1 1"
+        drop 1 mossy cobblestone
+
+
+on left click on stone:
+    if {module.gp} is not set:
+        stop
+    if player's gamemode is survival:
+        if player is holding planks:
+            execute console command "/execute at %player% run playsound minecraft:block.bone_block.break ambient @a ~ ~ ~ 1 0.7"
+            execute console command "/execute at %player% run playsound minecraft:block.wood.break ambient @a ~ ~ ~ 1 0.8"
+            execute console command "/execute at %player% run playsound minecraft:item.shield.break ambient @a ~ ~ ~ 1 1"
+            drop 8 sticks
+            remove 1 planks from player
+            wait 2 ticks
+            set event-block to andesite named "&rTomb Stone"
+
+on left click on andesite:
+    if {module.gp} is not set:
+        stop
+    if player's gamemode is survival:
+        if player is holding planks:
+            execute console command "/execute at %player% run playsound minecraft:block.bone_block.break ambient @a ~ ~ ~ 1 0.7"
+            execute console command "/execute at %player% run playsound minecraft:block.wood.break ambient @a ~ ~ ~ 1 0.8"
+            execute console command "/execute at %player% run playsound minecraft:item.shield.break ambient @a ~ ~ ~ 1 1"
+            drop 8 sticks
+            remove 1 planks from player
+            wait 2 ticks
+            set block to dead fire coral block named "&rTomb Andesite"
+on left click on dead fire coral block:
+    if {module.gp} is not set:
+        stop
+    if player's gamemode is survival:
+        if player is holding planks:
+            execute console command "/execute at %player% run playsound minecraft:block.bone_block.break ambient @a ~ ~ ~ 1 0.7"
+            execute console command "/execute at %player% run playsound minecraft:block.wood.break ambient @a ~ ~ ~ 1 0.8"
+            drop 8 sticks
+            remove 1 planks from player
+            set block to dead horn coral block named "&rTiny Rocks"
+on left click on dead horn coral block:
+    if {module.gp} is not set:
+        stop
+    if player's gamemode is survival:
+        if player is holding planks:
+            execute console command "/execute at %player% run playsound minecraft:block.bone_block.break ambient @a ~ ~ ~ 1 0.7"
+            execute console command "/execute at %player% run playsound minecraft:block.wood.break ambient @a ~ ~ ~ 1 0.8"
+            execute console command "/execute at %player% run playsound minecraft:item.shield.break ambient @a ~ ~ ~ 1 1"
+            drop 8 sticks
+            remove 1 planks from player
+            set block to cobblestone named "&rBoulder"
+on left click on cobblestone:
+    if {module.gp} is not set:
+        stop
+    if player's gamemode is survival:
+        if player is holding planks:
+            execute console command "/execute at %player% run playsound minecraft:block.bone_block.break ambient @a ~ ~ ~ 1 0.7"
+            execute console command "/execute at %player% run playsound minecraft:block.wood.break ambient @a ~ ~ ~ 1 0.8"
+            execute console command "/execute at %player% run playsound minecraft:item.shield.break ambient @a ~ ~ ~ 1 1"
+            drop 8 sticks
+            drop 3 cobblestone slab named "&rRock"
+            remove 1 planks from player
+            wait 2 ticks
+            set event-block to air
+on left click on diorite:
+    if {module.gp} is not set:
+        stop
+    if player's gamemode is survival:
+        if player is holding planks:
+            execute console command "/execute at %player% run playsound minecraft:block.bone_block.break ambient @a ~ ~ ~ 1 0.7"
+            execute console command "/execute at %player% run playsound minecraft:block.wood.break ambient @a ~ ~ ~ 1 0.8"
+            execute console command "/execute at %player% run playsound minecraft:item.shield.break ambient @a ~ ~ ~ 1 1"
+            drop 8 sticks
+            remove 1 planks from player
+            wait 2 ticks
+            set event-block to air
+            drop 1 diorite
+on left click on granite:
+    if {module.gp} is not set:
+        stop
+    if player's gamemode is survival:
+        if player is holding planks:
+            execute console command "/execute at %player% run playsound minecraft:block.bone_block.break ambient @a ~ ~ ~ 1 0.7"
+            execute console command "/execute at %player% run playsound minecraft:block.wood.break ambient @a ~ ~ ~ 1 0.8"
+            execute console command "/execute at %player% run playsound minecraft:item.shield.break ambient @a ~ ~ ~ 1 1"
+            drop 8 sticks
+            remove 1 planks from player
+            wait 2 ticks
+            drop granite
+            set event-block to air
+on left click on stone:
+  if {module.gp} is not set:
+    stop
+  if player's held item is flint:
+    execute console command "/execute at %player% run playsound item.flintandsteel.use player @a ~ ~ ~ 0.5 2"
+    execute console command "/execute at %player% run playsound item.flintandsteel.use player @a ~ ~ ~ 0.5 1.5"
+    execute console command "/execute at %player% run playsound item.flintandsteel.use player @a ~ ~ ~ 0.5 1"
+    execute console command "/execute at %player% run playsound item.flintandsteel.use player @a ~ ~ ~ 0.5 0.5"
+    execute console command "/execute at %player% run playsound item.flintandsteel.use player @a ~ ~ ~ 0.5 0"
+    set {core.%position of event-block%.originalfric} to stone
+    if player's gamemode is survival:
+      set event-block to andesite
+      set {core.%position of event-block%.frictionized} to true
+    if player's gamemode is creative:
+      set event-block to andesite
+      set {core.%position of event-block%.frictionized} to true
+
+on left click on cobblestone:
+  if {module.gp} is not set:
+    stop
+  if player's held item is flint:
+    execute console command "/execute at %player% run playsound item.flintandsteel.use player @a ~ ~ ~ 0.5 2"
+    execute console command "/execute at %player% run playsound item.flintandsteel.use player @a ~ ~ ~ 0.5 1.5"
+    execute console command "/execute at %player% run playsound item.flintandsteel.use player @a ~ ~ ~ 0.5 1"
+    execute console command "/execute at %player% run playsound item.flintandsteel.use player @a ~ ~ ~ 0.5 0.5"
+    execute console command "/execute at %player% run playsound item.flintandsteel.use player @a ~ ~ ~ 0.5 0"
+    set {core.%position of event-block%.originalfric} to cobblestone
+    if player's gamemode is survival:
+      set event-block to andesite
+      set {core.%position of event-block%.frictionized} to true
+    if player's gamemode is creative:
+      set event-block to andesite
+      set {core.%position of event-block%.frictionized} to true
+
+on break of andesite:
+  if {module.gp} is not set:
+    stop
+  if {core.%position of event-block%.frictionized} is equal to true:
+    set {core.%position of event-block%.frictionized} to false
+    cancel event
+    set event-block to air
+    if {core.%position of event-block%.originalfric} is equal to stone:
+      drop 1 stone
+    if {core.%position of event-block%.originalfric} is equal to cobblestone:
+      drop 1 cobblestone
+    execute console command "/execute at %player% run playsound item.shield.break player @a ~ ~ ~ 0.5 1"
+    execute console command "/execute at %player% run playsound block.stone.break player @a ~ ~ ~ 0.5 1"
+    execute console command "/execute at %player% run playsound block.bone_block.break player @a ~ ~ ~ 0.5 1"
+
+on right click on andesite:
+  if {module.gp} is not set:
+    stop
+  if player's held item is diamond:
+    if {core.%position of event-block%.frictionized} is equal to true:
+      remove 1 diamond from player
+      set event-block to diamond ore
+      execute console command "/execute at %player% run playsound block.lava.extinguish player @a ~ ~ ~ 0.5 1"
+      set {core.%position of event-block%.frictionized} to false
+      execute console command "/particle happy_villager core.%position of event-block% 5 5 5 5 24"
+  if player's held item is iron ingot:
+    if {core.%position of event-block%.frictionized} is equal to true:
+      remove 1 iron ingot from player
+      set event-block to iron ore
+      execute console command "/execute at %player% run playsound block.lava.extinguish player @a ~ ~ ~ 0.5 1"
+      set {core.%position of event-block%.frictionized} to false
+      execute console command "/particle happy_villager core.%position of event-block% 5 5 5 5 24"
+  if player's held item is gold ingot:
+    if {core.%position of event-block%.frictionized} is equal to true:
+      remove 1 gold ingot from player
+      set event-block to gold ore
+      execute console command "/execute at %player% run playsound block.lava.extinguish player @a ~ ~ ~ 0.5 1"
+      set {core.%position of event-block%.frictionized} to false
+      execute console command "/particle happy_villager core.%position of event-block% 5 5 5 5 24"
+  if player's held item is redstone dust:
+    if {core.%position of event-block%.frictionized} is equal to true:
+      remove 1 redstone dust from player
+      set event-block to redstone ore
+      execute console command "/execute at %player% run playsound block.lava.extinguish player @a ~ ~ ~ 0.5 1"
+      set {core.%position of event-block%.frictionized} to false
+      execute console command "/particle happy_villager core.%position of event-block% 5 5 5 5 24"
+  if player's held item is lapis lazuli:
+    if {core.%position of event-block%.frictionized} is equal to true:
+      remove 1 lapis lazuli from player
+      set event-block to lapis lazuli ore
+      execute console command "/execute at %player% run playsound block.lava.extinguish player @a ~ ~ ~ 0.5 1"
+      set {core.%position of event-block%.frictionized} to false
+      execute console command "/particle happy_villager core.%position of event-block% 5 5 5 5 24"
+  if player's held item is coal:
+    if {core.%position of event-block%.frictionized} is equal to true:
+      remove 1 coal from player
+      set event-block to coal ore
+      execute console command "/execute at %player% run playsound block.lava.extinguish player @a ~ ~ ~ 0.5 1"
+      set {core.%position of event-block%.frictionized} to false
+      execute console command "/particle happy_villager core.%position of event-block% 5 5 5 5 24"
+  if player's held item is emerald:
+    if {core.%position of event-block%.frictionized} is equal to true:
+      remove 1 emerald from player
+      set event-block to emerald ore
+      execute console command "/execute at %player% run playsound block.lava.extinguish player @a ~ ~ ~ 0.5 1"
+      set {core.%position of event-block%.frictionized} to false
+      execute console command "/particle happy_villager core.%position of event-block% 5 5 5 5 24"
+
+command /attn <player> <text>:
+	permission: staff
+	trigger:
+		if {module.mod} is not set:
+			message "&cModule Moderation is not enabled."
+			stop
+		message "&eYou have called &9@%arg 1% &eto come back to their Minecraft window due to the following: ""&f%colored arg 2%&e""." to player
+		open chest with 3 rows named "&c&lAttention!" to arg 1
+		format slot 13 of arg 1 with redstone block named "&4Pick Up" to close then run [execute arg 1 command "attndone"]
+		add arg 1 to {attn::*}
+		set {attn.core.%arg 1%} to arg 2 
+		set {from.attn.core.%arg 1%} to player
+command /donone:
+	trigger:
+		set {none} to 2
+		clear {none}
+command /nobodyasked <player>:
+ permission: op
+ permission message: "&cNobody asked!"
+ trigger:
+  message "&3Nobody asked'd core.%arg 1% successfully!"
+  loop 20 times:
+   wait a tick
+   message "&e " to arg 1
+  message "&b       Did you know?" to arg 1
+  loop 4 times:
+   message "&e " to arg 1
+  wait 1 second
+  loop 20 times:
+   wait a tick
+   message "&c&l&o&nNOBODY&c&l&o FRICKING ASKED!!!!" to arg 1
+command /attndone:
+	trigger:
+		execute player command "/donone"
+		message "&c&lATTENTION! &7&l> &f%{from.attn.core.%player%}% &7&l> &f%colored {attn.core.%player%}%"  to player		
+		remove player from {attn::*}
+		clear {attn.core.%player%}
+		message "&9@%player%&a picked up your attention call." to {from.attn.core.%player%}
+on inventory close:
+	if {attn.core.%player%} is set: 
+		message "&9@%player%&c didn't pick up your attention call." to {from.attn.core.%player%}
+		remove player from {attn::*}
+		clear {attn.core.%player%}
+	if {vote::*} contains player:
+		execute console command "/votesee %colored {voteTopic}% core.%player%"
+command /erasevar <text>:
+ trigger:
+  message "&cVariable cleared. Previous data: &f%{core.%arg 1%}%"
+  clear {core.%arg 1%}
+  
+every 4 ticks:
+	loop all players:
+		if {attn::*} contains loop-player:
+			execute console command "/playsound minecraft:block.note_block.pling ambient core.%loop-player% ~ ~ ~ 10000000 1"
+			execute console command "/playsound minecraft:block.note_block.pling ambient core.%loop-player% ~ ~ ~ 10000000 1"
+			execute console command "/playsound minecraft:block.note_block.pling ambient core.%loop-player% ~ ~ ~ 10000000 1"
+			execute console command "/playsound minecraft:block.note_block.pling ambient core.%loop-player% ~ ~ ~ 10000000 1"
+			execute console command "/playsound minecraft:block.note_block.pling ambient core.%loop-player% ~ ~ ~ 10000000 1"
+			execute console command "/playsound minecraft:block.note_block.pling ambient core.%loop-player% ~ ~ ~ 10000000 1"
+			execute console command "/playsound minecraft:block.note_block.pling ambient core.%loop-player% ~ ~ ~ 10000000 1"
+			execute console command "/playsound minecraft:block.note_block.pling ambient core.%loop-player% ~ ~ ~ 10000000 1"
+			execute console command "/playsound minecraft:block.note_block.pling ambient core.%loop-player% ~ ~ ~ 10000000 0.5"
+			wait 2 tick
+			execute console command "/playsound minecraft:block.note_block.pling ambient core.%loop-player% ~ ~ ~ 10000000 1.5"
+			execute console command "/playsound minecraft:block.note_block.pling ambient core.%loop-player% ~ ~ ~ 10000000 1.5"
+			execute console command "/playsound minecraft:block.note_block.pling ambient core.%loop-player% ~ ~ ~ 10000000 1.5"
+			execute console command "/playsound minecraft:block.note_block.pling ambient core.%loop-player% ~ ~ ~ 10000000 1.5"
+			execute console command "/playsound minecraft:block.note_block.pling ambient core.%loop-player% ~ ~ ~ 10000000 1.5"
+			execute console command "/playsound minecraft:block.note_block.pling ambient core.%loop-player% ~ ~ ~ 10000000 1.5"
+			execute console command "/playsound minecraft:block.note_block.pling ambient core.%loop-player% ~ ~ ~ 10000000 1.5"
+			execute console command "/playsound minecraft:block.note_block.pling ambient core.%loop-player% ~ ~ ~ 10000000 1.5"
+			execute console command "/playsound minecraft:block.note_block.pling ambient core.%loop-player% ~ ~ ~ 10000000 1.5"
+			execute console command "/playsound minecraft:block.note_block.pling ambient core.%loop-player% ~ ~ ~ 10000000 1"
+every 10 ticks:
+	loop all players:
+		if {vote::*} contains loop-player:
+			execute console command "/playsound minecraft:block.note_block.pling ambient core.%loop-player% ~ ~ ~ 10000000 0.6"
+			wait 5 tick
+			execute console command "/playsound minecraft:block.note_block.pling ambient core.%loop-player% ~ ~ ~ 10000000 0.8"
+			wait 5 tick
+command /vote <text>:
+	permission: staff
+	trigger:
+		if {module.mod} is not set:
+			message "&cModule Moderation is not enabled." to player
+		if {vote::*} is set:
+			message "&cYou cannot set another poll while one is already active!"
+			stop
+		set {voteNo} to 0
+		set {voteYes} to 0
+		set {voteNeu} to 0
+		set {voteTopic} to arg 1
+		loop all players:
+			execute console command "/votesee %arg 1% %loop-player%"
+			add loop-player to {vote::*}
+command /votesee <text> <player>:
+	executable by: console
+	trigger:
+		wait 3 ticks
+		open chest with 5 rows named "&a&lV&e&lO&6&lT&c&lE" to arg 2
+		set {_temp} to 0
+		loop 13 times:
+			format slot {_temp} of arg 2 with black stained glass pane named "&f" to be unstealable
+			set {_temp} to {_temp}+1
+		format slot 13 of arg 2 with paper named colored arg 1 to be unstealable
+		loop 15 times:
+			set {_temp} to {_temp}+1
+			format slot {_temp} of arg 2 with black stained glass pane named "&f" to be unstealable
+		format slot {_temp} of arg 2 with emerald block named "&a&lYES" to close then run [execute console command "voteYes %arg 2%"]
+		loop 3 times:
+			set {_temp} to {_temp}+1
+			format slot {_temp} of arg 2 with black stained glass pane named "&f" to be unstealable
+		format slot {_temp} of arg 2 with gold block named "&6&lNO OPINION" to close then run [execute console command "voteIdfk %arg 2%"]
+		loop 3 times:
+			set {_temp} to {_temp}+1
+			format slot {_temp} of arg 2 with black stained glass pane named "&f" to be unstealable
+		format slot {_temp} of arg 2 with redstone block named "&c&lNO" to close then run [execute console command "voteNo %arg 2%"]
+		loop 10 times:
+			set {_temp} to {_temp}+1
+			format slot {_temp} of arg 2 with black stained glass pane named "&f" to be unstealable
+command /voteYes <player>:
+	executable by: console
+	trigger:
+		message "&aThanks for voting!" to arg 1
+		remove arg 1 from {vote::*}
+		add 1 to {voteYes}
+		broadcast ""
+		wait a tick
+		broadcast "&3VOTE &7&m                                      "
+		wait a tick
+		broadcast "&b%colored {voteTopic}%"
+		wait a tick
+		broadcast ""
+		wait a tick
+		broadcast "&3&m                          &b %{voteYes} - {voteNo}%&a &m                         "
+		wait a tick
+		broadcast "&a&l✓ &aYES&7......................................................................................%{voteYes}%&a [+1]"
+		wait a tick
+		broadcast "&6&l- &6NEUTRAL&7..........................................................................%{voteNeu}%"
+		wait a tick
+		broadcast "&c&l〤 &cNO&7........................................................................................%{voteNo}%"
+		wait a tick
+		broadcast ""
+		wait a tick
+		broadcast "&3Latest voter: &b%arg 1%"
+		wait a tick
+		broadcast ""
+command /voteNo <player>:
+	executable by: console
+	trigger:
+		remove arg 1 from {vote::*}
+		message "&aThanks for voting!" to arg 1
+		add 1 to {voteNo}
+		broadcast ""
+		wait a tick
+		broadcast "&3VOTE &7&m                                      "
+		wait a tick
+		broadcast "&b%colored {voteTopic}%"
+		wait a tick
+		broadcast ""
+		wait a tick
+		broadcast "&c&m                           &b %{voteYes} - {voteNo}%&3 &m                         "
+		wait a tick
+		broadcast "&a&l✓ &aYES&7......................................................................................%{voteYes}%"
+		wait a tick
+		broadcast "&6&l- &6NEUTRAL&7..........................................................................%{voteNeu}%"
+		wait a tick
+		broadcast "&c&l〤 &cNO&7........................................................................................%{voteNo}%&c [-1]"
+		wait a tick
+		broadcast ""
+		wait a tick
+		broadcast "&3Latest voter: &b%arg 1%"
+		wait a tick
+		broadcast ""
+command /voteIdfk <player>:
+	executable by: console
+	trigger:
+		remove arg 1 from {vote::*}
+		message "&aThanks for voting!" to arg 1
+		add 1 to {voteNeu}
+		broadcast ""
+		wait a tick
+		broadcast "&3VOTE &7&m                                      "
+		wait a tick
+		broadcast "&b%colored {voteTopic}%"
+		wait a tick
+		broadcast ""
+		wait a tick
+		broadcast "&3&m             &6&m              &b %{voteYes} - {voteNo}%&6 &m             &3&m            "
+		wait a tick
+		broadcast "&a&l✓ &aYES&7......................................................................................%{voteYes}%"
+		wait a tick
+		broadcast "&6&l- &6NEUTRAL&7..........................................................................%{voteNeu}% &6[/1]"
+		wait a tick
+		broadcast "&c&l〤 &cNO&7........................................................................................%{voteNo}%"
+		wait a tick
+		broadcast ""
+		wait a tick
+		broadcast "&3Latest voter: &bcore.%arg 1%"
+		wait a tick
+		broadcast ""
+
+command /core-reload:
+  permission: op
+  trigger:
+    message "&3Core is now reloading..."
+    log "[CORE] core.%player% reloaded Core." to "core.log" 
+    execute player command "/sk reload core"
+
+command /whatisthis:
+	trigger:
+		message "core.%player's tool%"
+command /ulterca [<text>]:
+  trigger:
+    send "&3&l/ulterca &b&lAll In One"
+
+command /forcechat [<player>] [<text>]:
+  permission: op
+  trigger:
+    make arg 1 say arg 2
+    log "[CORE] core.%player% used /forcechat to make ""core.%arg 1% say core.%arg 2%""." to "core.log" 
+
+command /protest [<text>]:
+  permission: op
+  cooldown: 2 seconds
+  cooldown message: &cPlease wait prior to protesting again.
+  trigger:
+    loop all players:
+      make loop-player say arg 1
+      log "[CORE] core.%player% used /protest to protest ""core.%arg 1%""." to "core.log" 
+
+
+
+
+on chat:
+  log "[core.%player%] [chat] %message%" to "logs.log" 
+
+command:
+  if player is not equal to "<none>":
+    log "[core.%player%] [command] %full command%" to "logs.log" 
+
+command /invsee [<player>]:
+  aliases: /isee, /invs, /inventory
+  permission: op
+  trigger:
+    open inventory of arg 1 to player
+
+command /ecsee [<player>]:
+  aliases: /enderchestsee, /endersee, /esee
+  permission: op
+  trigger:
+    open ender chest of arg 1 to player
+
+command /rawsb [<text>]:
+  permission: op
+  trigger:
+    broadcast colored arg 1
+
+command /rawsbplayer [<player>] [<text>]:
+  permission: op
+  trigger:
+    send colored arg 2 to arg 1
+
+command /rawsbself [<text>]:
+  permission: op
+  trigger:
+    send colored arg 1
+
+command /shout <text>:
+  permission: shout
+  trigger:
+    execute console command "execute as @a at @s run playsound minecraft:item.trident.return ambient @s ~ ~ ~ 15 1"
+    broadcast "&4&l[&c&LSHOUT&4&l] core.%player's displayname% &4➢ &c%colored arg 1%"
+
+on chat:
+  if {core.%player's uuid%LVL} is not set:
+    set {core.%player's uuid%LVL} to ""
+  if {core.%player's uuid%PREFIX} is not set:
+    set {core.%player's uuid%PREFIX} to ""
+
+on join:
+  if {core.%player's uuid%LVL} is not set:
+    set {core.%player's uuid%LVL} to ""
+  if {core.%player's uuid%PREFIX} is not set:
+    set {core.%player's uuid%PREFIX} to ""
+
+command /setprefix [<text>]:
+  permission: op
+  trigger:
+    if {module.cpref} is not set:
+      stop
+      message "&cModule Custom Chat is disabled."
+    if arg 1 is set:
+      set {core.%player's uuid%PREFIX} to "%colored arg 1%&7&l > "
+      send "&7Successfully set your chat prefix to &8""&f%{core.%player's uuid%PREFIX}%&8""&7."
+    else:
+      set {core.%player's uuid%PREFIX} to ""
+      send "&7Successfully cleared your chat prefix."
+
+command /setnick [<text>]:
+  permission: op
+  trigger:
+    if {module.cpref} is not set:
+      message "&cModule Custom Chat is disabled."
+      stop
+    execute console command "/nickname core.%player% %colored arg 1%"
+    send "&7Successfully set your chat name to &8""&f%colored arg 1%&8""&7."
+
+command /hologram [<text>] [<text>]:
+ permission: {@holoPerm}
+ trigger:
+  if arg 1 is "create":
+   if arg 2 is not set:
+    message "&cProvide the text to apply to the hologram first."
+    stop
+   execute console command "/execute as %player% at @s run summon minecraft:armor_stand ~ ~2 ~ {NoGravity:1b,Invisible:1b,CustomNameVisible:1b,CustomName:""{\""text\"":\""%colored arg 2%\""}"",Small:1b}"
+   message "&aCreated new hologram."
+  else if arg 1 is "delete":
+   execute console command "/execute as %player% at @s run kill @e[type=minecraft:armor_stand,distance=..1]"
+   message "&aDeleted holograms within a one-block radius."
+  else if arg 1 is not set:
+   message "&3&m              &b&l Holograms &3&m              &r"
+   message "&b/hologram create <text>&7 | &3create a hologram with the desired text."
+   message "&b/hologram delete&7 | &3delete nearby holograms within a one-block radius of you."
+  
+command /braincells [<text>]:
+ trigger:
+  if random integer between 1 and 2 is 2:
+   message "&aYou just gained %random number from 1 to 6969% brain cells."
+  else:
+   message "&cYou just lost %random number from 1 to 6969% brain cells."
+on skript stop: 
+  execute console command "save-all"
