@@ -8,7 +8,7 @@
 # ╚█████╔╝╚█████╔╝██║  ██║███████╗ 
 #  ╚════╝  ╚════╝ ╚═╝  ╚═╝╚══════╝ 
 #
-#
+# Need to update Core? Check https://github.com/sccpsteve/core/blob/main/core.sk
 
 # Make sure all of these are installed in your server: EssentialsX, Skript, SkQuery, Skellett, SkDragon, WorldEdit, LuckPerms, SkRayfall
 
@@ -45,7 +45,7 @@ options:
 
     # DO NOT EDIT BELOW THIS LINE UNLESS YOU KNOW WHAT YOU ARE DOING!
 
-	ver: LOG 2/12/2022 
+	ver: 3.16.22
 
 
 
