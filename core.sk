@@ -323,7 +323,7 @@ on chat:
 	if {core.%player's uuid%.SuffixColorCode} is not set: 
 		set {core.%player's uuid%.SuffixColorCode} to "&r"
 	if {core.%player's uuid%.PrefixColorCode} is not set: 
-		set {core.%player's uuid%.SuffixColorCode} to "&r"
+		set {core.%player's uuid%.PrefixColorCode} to "&r"
     
 	if {module.filter} is not set:
 		stop
@@ -335,19 +335,19 @@ on chat:
 		# 2 letter swears
 		#replace all "" with "%{core.%player's uuid%.PrefixColorCode}%**%{core.%player's uuid%.SuffixColorCode}%" in the message
 		# 3 letter swears
-		replace all "sex", "fag", "kys", "cum", "ass" and "tit" with "%{core.%player's uuid%.PrefixColorCode}%***%{core.%player's uuid%.SuffixColorCode}%" in the message
+		replace all "sex", "fag", "kys", "cum", and "tit" with "%{core.%player's uuid%.PrefixColorCode}%***%{core.%player's uuid%.SuffixColorCode}%" in the message
     	#quick fix below supposed to be here
 		replace all "frick" and "frickrick" with "f" in the message
 		# 4 letter swears
-		replace all "shit", "cunt", "porn", "jerk", "nazi", "cock", "rape", "r4pe", "repe", "fack", "fukk", "wank", "boob", "dick", "anus", "anal" and "fuck" with "%{core.%player's uuid%.PrefixColorCode}%****%{core.%player's uuid%.SuffixColorCode}%" in the message
+		replace all "cuck", "cunt", "porn", "jerk", "nazi", "cock", "rape", "r4pe", "repe", "wank", "boob", "dick", "anus", and "anal" with "%{core.%player's uuid%.PrefixColorCode}%****%{core.%player's uuid%.SuffixColorCode}%" in the message
 		# 5 letter swears
-		replace all "f uck", "fu ck", "fuc k", "f u c k", "f uck", "s hit", "sh it", "shi t", "s h i t", "nigga", "penis", "moron", "whore", "vulva", "pussy" and "bitch" with "%{core.%player's uuid%.PrefixColorCode}%*****%{core.%player's uuid%.SuffixColorCode}%" in the message
+		replace all "nigga", "penis", "moron", "whore", "vulva", "pussy" and "bitch" with "%{core.%player's uuid%.PrefixColorCode}%*****%{core.%player's uuid%.SuffixColorCode}%" in the message
 		# 6 letter swears
-		replace all "nigger", "hitler", "retard", "rapist", "vagina"  and "condom" with "%{core.%player's uuid%.PrefixColorCode}%******%{core.%player's uuid%.SuffixColorCode}%" in the message
+		replace all "nigger", "hitler", "retard", "rapist", "vagina" and "condom" with "%{core.%player's uuid%.PrefixColorCode}%******%{core.%player's uuid%.SuffixColorCode}%" in the message
 		# 7 letter swears
 		replace all "die jew", "asshole" and "bastard" with "%{core.%player's uuid%.PrefixColorCode}%*******%{core.%player's uuid%.SuffixColorCode}%" in the message
 		# 8 letter swears
-		replace all "swastika", "retarded", "ass hole" and "ass-hole" with "%{core.%player's uuid%.PrefixColorCode}%********%{core.%player's uuid%.SuffixColorCode}%" in the message
+		replace all "swastika", "retarded", "dickhead", "shithead", "ass hole" and "ass-hole" with "%{core.%player's uuid%.PrefixColorCode}%********%{core.%player's uuid%.SuffixColorCode}%" in the message
 		# 9 letter swears
 		replace all "die u jew" and "pedophile" with "%{core.%player's uuid%.PrefixColorCode}%*********%{core.%player's uuid%.SuffixColorCode}%" in the message
 		# 10 letter swears
