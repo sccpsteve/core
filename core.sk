@@ -146,81 +146,81 @@ command //moduletoggle [<text>]:
 		if arg 1 is "spawn":
 			if {module.spawn} is true:
 				clear {module.spawn}
-				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 0.95"
+				execute console command "/playsound minecraft:ui.button.click ambient %player% ~ ~ ~ 10000000 0.95"
 				wait 2 ticks
-				log "[CORE] core.%player% has toggled module spawn. <OFF>" to "core.log" 
-				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 0.5"
+				log "[CORE] %player% has toggled module spawn. <OFF>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient %player% ~ ~ ~ 10000000 0.5"
 			else:
 				set {module.spawn} to true
-				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 1.2"
+				execute console command "/playsound minecraft:ui.button.click ambient %player% ~ ~ ~ 10000000 1.2"
 				wait 2 tick
-				log "[CORE] core.%player% has toggled module spawn. <ON>" to "core.log" 
-				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 1"
+				log "[CORE] %player% has toggled module spawn. <ON>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient %player% ~ ~ ~ 10000000 1"
 		if arg 1 is "filter":
 			if {module.filter} is true:
 				clear {module.filter}
-				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 0.95"
+				execute console command "/playsound minecraft:ui.button.click ambient %player% ~ ~ ~ 10000000 0.95"
 				wait 2 ticks
-				log "[CORE] core.%player% has toggled module filter. <OFF>" to "core.log" 
-				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 0.5"
+				log "[CORE] %player% has toggled module filter. <OFF>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient %player% ~ ~ ~ 10000000 0.5"
 			else:
 				set {module.filter} to true
-				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 1.2"
+				execute console command "/playsound minecraft:ui.button.click ambient %player% ~ ~ ~ 10000000 1.2"
 				wait 2 tick
-				log "[CORE] core.%player% has toggled module filter. <ON>" to "core.log" 
-				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 1"
+				log "[CORE] %player% has toggled module filter. <ON>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient %player% ~ ~ ~ 10000000 1"
 		if arg 1 is "mod":
 			if {module.mod} is true:
 				clear {module.mod}
-				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 0.95"
+				execute console command "/playsound minecraft:ui.button.click ambient %player% ~ ~ ~ 10000000 0.95"
 				wait 2 ticks
-				log "[CORE] core.%player% has toggled module moderation. <OFF>" to "core.log" 
-				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 0.5"
+				log "[CORE] %player% has toggled module moderation. <OFF>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient %player% ~ ~ ~ 10000000 0.5"
 			else:
 				set {module.mod} to true
-				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 1.2"
+				execute console command "/playsound minecraft:ui.button.click ambient %player% ~ ~ ~ 10000000 1.2"
 				wait 2 tick
-				log "[CORE] core.%player% has toggled module moderation. <ON>" to "core.log" 
-				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 1"
+				log "[CORE] %player% has toggled module moderation. <ON>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient %player% ~ ~ ~ 10000000 1"
 		if arg 1 is "chat":
 			if {module.chat} is true:
 				clear {module.chat}
-				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 0.95"
+				execute console command "/playsound minecraft:ui.button.click ambient %player% ~ ~ ~ 10000000 0.95"
 				wait 2 ticks
-				log "[CORE] core.%player% has toggled module chat addons. <OFF>" to "core.log" 
-				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 0.5"
+				log "[CORE] %player% has toggled module chat addons. <OFF>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient %player% ~ ~ ~ 10000000 0.5"
 			else:
 				set {module.chat} to true
-				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 1.2"
+				execute console command "/playsound minecraft:ui.button.click ambient %player% ~ ~ ~ 10000000 1.2"
 				wait 2 tick
-				log "[CORE] core.%player% has toggled module chat addons. <ON>" to "core.log" 
-				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 1"
+				log "[CORE] %player% has toggled module chat addons. <ON>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient %player% ~ ~ ~ 10000000 1"
 		if arg 1 is "gp":
 			if {module.gp} is true:
 				clear {module.gp}
-				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 0.95"
+				execute console command "/playsound minecraft:ui.button.click ambient %player% ~ ~ ~ 10000000 0.95"
 				wait 2 ticks
-				log "[CORE] core.%player% has toggled module gameplay mechanics. <OFF>" to "core.log" 
-				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 0.5"
+				log "[CORE] %player% has toggled module gameplay mechanics. <OFF>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient %player% ~ ~ ~ 10000000 0.5"
 			else:
 				set {module.gp} to true
-				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 1.2"
+				execute console command "/playsound minecraft:ui.button.click ambient %player% ~ ~ ~ 10000000 1.2"
 				wait 2 tick
-				log "[CORE] core.%player% has toggled module gameplay mechanics. <ON>" to "core.log" 
-				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 1"
+				log "[CORE] %player% has toggled module gameplay mechanics. <ON>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient %player% ~ ~ ~ 10000000 1"
 		if arg 1 is "cpref":
 			if {module.cpref} is true:
 				clear {module.cpref}
-				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 0.95"
+				execute console command "/playsound minecraft:ui.button.click ambient %player% ~ ~ ~ 10000000 0.95"
 				wait 2 ticks
-				log "[CORE] core.%player% has toggled module CPrefix. <OFF>" to "core.log" 
-				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 0.5"
+				log "[CORE] %player% has toggled module CPrefix. <OFF>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient %player% ~ ~ ~ 10000000 0.5"
 			else:
 				set {module.cpref} to true
-				execute console command "/playsound minecraft:ui.button.click ambient core.%player% ~ ~ ~ 10000000 1.2"
+				execute console command "/playsound minecraft:ui.button.click ambient %player% ~ ~ ~ 10000000 1.2"
 				wait 2 tick
-				log "[CORE] core.%player% has toggled module CPrefix. <ON>" to "core.log" 
-				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient core.%player% ~ ~ ~ 10000000 1"
+				log "[CORE] %player% has toggled module CPrefix. <ON>" to "core.log" 
+				execute console command "/playsound minecraft:entity.experience_orb.pickup ambient %player% ~ ~ ~ 10000000 1"
 		execute player command "//definemodulemenu"
 command /modules:
 	trigger:
@@ -266,7 +266,7 @@ on respawn:
         stop
     wait 3 ticks
     teleport player to {spawnPos}
-    execute console command "/execute as core.%player% at @s run tp @s ~ ~ ~ %{y}% %{p}%"
+    execute console command "/execute as %player% at @s run tp @s ~ ~ ~ %{y}% %{p}%"
 on join:
     if {module.spawn} is not set:
         stop
@@ -279,8 +279,8 @@ command /spawn [<text>]:
             execute player command "/espawn core.%arg 1%"
             stop
         teleport player to {spawnPos}
-        execute console command "/execute as core.%player% at @s run tp @s ~ ~ ~ %{y}% %{p}%"
-        execute console command "/playsound minecraft:entity.ender_eye.death ambient core.%player% ~ ~ ~ 1000000 1"
+        execute console command "/execute as %player% at @s run tp @s ~ ~ ~ %{y}% %{p}%"
+        execute console command "/playsound minecraft:entity.ender_eye.death ambient %player% ~ ~ ~ 1000000 1"
 
 command /setspawn [<text>]:
     usage: &cUsage: /setspawn
@@ -309,21 +309,21 @@ command /removestaff <offline player>:
 		message "&8[{@servername}&8] &7core.%arg 1% was remove from the list!" to player
 
 on first join:
-  send "&3Welcome &bcore.%player%&3! Please enjoy your stay! &e☺" to player
-  log "[CORE] core.%player% joined for the first time." to "core.log" 
+  send "&3Welcome &b%player%&3! Please enjoy your stay! &e☺" to player
+  log "[CORE] %player% joined for the first time." to "core.log" 
 
 on world change:
-  log "[CORE] core.%player% went to world ""core.%player's world%""." to "core.log" 
+  log "[CORE] %player% went to world ""%player's world%""." to "core.log" 
 
 command /invisframe:
 	trigger:
 		execute player command "minecraft:give @p item_frame{EntityTag:{Invisible:1,Invincible:1}}"
 
 on chat:
-	if {core.%player's uuid%.SuffixColorCode} is not set: 
-		set {core.%player's uuid%.SuffixColorCode} to "&r"
-	if {core.%player's uuid%.PrefixColorCode} is not set: 
-		set {core.%player's uuid%.PrefixColorCode} to "&r"
+	if {%player's uuid%.SuffixColorCode} is not set: 
+		set {%player's uuid%.SuffixColorCode} to "&r"
+	if {%player's uuid%.PrefixColorCode} is not set: 
+		set {%player's uuid%.PrefixColorCode} to "&r"
     
 	if {module.filter} is not set:
 		stop
@@ -331,7 +331,7 @@ on chat:
 		replace all "server suck" and "bad server" and "trash serv" and "crappy serv" with "lol this server is so good ngl " In message
 		replace all "op me" and "op pls" and "op please" and "op plz" and "pls op" and "please op" and "pleas op" and "gimme op" and "give me op" and "give me server operator" and "gimme server operator" and "make me server operator" with "Can I apply?" in message
 		# 1 letter swears and blocked symbols
-		replace all "卐" and "卍" with "%{core.%player's uuid%.PrefixColorCode}%*%{core.%player's uuid%.SuffixColorCode}%" in the message
+		replace all "卐" and "卍" with "%{%player's uuid%.PrefixColorCode}%*%{%player's uuid%.SuffixColorCode}%" in the message
 		replace all "Cum","fag","fku","Gyp","jap","Nig","SMD","Vag","Wop","オメコ","チンポ","ツンボ","ニガー","マンコ","レイプ","支那人","精薄者,","8=D","fck","kkk","STD","Wog","ちんぽ","ニグロ","まんこ","Ass","つんぼ","Fgt", and "れいぷ" with "***" in message
 		replace all "1488", "AIDs", "Anal", "bung", "cl1t", "clit", "cock", "CSAM", "cunt", "cvnt", "d1kc", "dago", "dikc", "Dyke", "f0ck", "fags", "Fckn", "fokc", "fucc", "Fupa", "fvck", "g00k", "gook", "h0mo", "hom0", "hor3", "Kike", "kun7", "Meth", "milf", "Mong", "naz1", "nazl", "Paki", "Pedo", "phag", "Porn", "Puto", "r4p3", "Raip", "rape", "sh17", "Shat", "shi7", "shit", "STDs", "Thot", "Titz", "tw47", "twat", "アオカン", "インバイ", "オナニー", "きけいじ", "きちがい", "きんたま", "くろんぼ", "しなじん", "たちんぼ", "トルコ嬢", "AIDs", "BAMF", "blad", "Btch", "c0ck", "coon", "cun7", "cyka", "fuck", "fxck", "g0ok", "h0m0", "homo", "hore", "Joto", "k1k3", "n4z1", "ni6g", "Orgy", "Puta", "sh|t", "Tits", "tw4t", "あおかん", "いんばい", "キケイジ", "キンタマ", "タチンボ", "anus", "arse", "Culo", "d4go", "fcuk", "fock", "go0k", "Hure", "jizz", "kik3", "nazi", "sh1t", "Wank", "クロンボ", "b1tc", "cli7", "cvn7", "dong", "f0kc", "fuct", "nggr", "Pube", "おなにー", "シナジン","Pute","キチガイ","ちょん公", and "сука" with "****" in message
 		replace all "ahole", "aokan", "arsed", "arses", "b00bz", "Baise", "Biach", "bitch", "bladt", "boner", "boobz", "chink", "chode", "dongs", "f3lch", "fcuuk", "Fotze", "fuckd", "fuckr", "h1tle", "hitlr", "honky", "hymen", "Injun", "Joder", "k k k", "Kurva", "kxkxk", "lesbo", "manko", "Merda", "n1664", "n4g3r", "nag3r", "ni66a", "ni66g", "ni6g6", "nig6g", "nigg6", "niggr", "nugga", "omeko", "p3n15", "p3ni5", "p3nl5", "pen1s", "peni5", "penis", "penl5", "penus", "Pikey", "Pizda", "Porra", "pub1c", "pubic", "puss3", "pusse", "pussy", "Pussy", "puzzy", "queef", "reipu", "Semen", "tinpo", "wh0re", "whore", "Блядь", "イヌゴロシ", "かわらもの", "ちょんこう", "ちょんころ", "にんぴにん", "Arsch", "b00bs", "bon3r", "Cazzo", "dildo", "felch", "Gooch", "Kurwa", "lezbo", "n1g3r", "n3gro", "natzi", "ni666", "nig66", "nigg3", "niqqa", "p3nis", "pen15", "penls", "pr1ck", "pu55y", "puss5", "pvssy", "raape", "Raped", "secks", "Skank", "チョンコロ", "とるこぶろ", "asses", "boobs", "choad", "fuuck", "goook", "l3sb0", "Minge", "n166a", "nigar", "p3nls", "Perra", "Polla", "prick", "Punal", "pussi", "Taint", "teino", "whor3", "いぬごろし", "カワラモノ", "チョンコウ", "blyad", "nigga", "Nonce", "phuck", "tunbo", "トルコ風呂", "anuss", "g000k", "ni6gg", "p3n1s", "wh0r3", "ch1nk", "h1tl3", "Sodom", "Fanny", "niggy", "Merde", "puss1" with "*****" in message
@@ -353,7 +353,7 @@ command /statusjoined <text>:
 		execute console command "execute as @a at @s run playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 5 0.7"
 on quit:
 	if {module.chat} is set:
-		execute console command "/statusLeave core.%player%"
+		execute console command "/statusLeave %player%"
 		set quit message to "&b%player% &3left."
 command /statusleave <text>:
 	executable by: console
@@ -396,66 +396,66 @@ on chat:
 		
 
 	# Misc Fixes 
-	replace all "m%{core.%player's uuid%.PrefixColorCode}%***%{core.%player's uuid%.SuffixColorCode}%" with "mass" in the message
-	replace all "ddos" with "§c§lDDOS%{core.%player's uuid%.SuffixColorCode}%" in the message
-	replace all "en%{core.%player's uuid%.PrefixColorCode}%***%{core.%player's uuid%.SuffixColorCode}%y" with "entity" in the message
-	replace all "gl%{core.%player's uuid%.PrefixColorCode}%***%{core.%player's uuid%.SuffixColorCode}%" with "glass" in the message
-	replace all "p%{core.%player's uuid%.PrefixColorCode}%***%{core.%player's uuid%.SuffixColorCode}%" with "pass" in message
-	replace all "gr%{core.%player's uuid%.PrefixColorCode}%***%{core.%player's uuid%.SuffixColorCode}%" with "grass" in message
-	replace all "l%{core.%player's uuid%.PrefixColorCode}%***%{core.%player's uuid%.SuffixColorCode}%" with "lass" in message
-	replace all "%{core.%player's uuid%.PrefixColorCode}%***%{core.%player's uuid%.SuffixColorCode}%u" with "assu" in message
-	replace all "b%{core.%player's uuid%.PrefixColorCode}%***%{core.%player's uuid%.SuffixColorCode}%" with "bass" in message
-	replace all "n%{core.%player's uuid%.PrefixColorCode}%***%{core.%player's uuid%.SuffixColorCode}%" with "ntit" in message
-	replace all "r%{core.%player's uuid%.PrefixColorCode}%***%{core.%player's uuid%.SuffixColorCode}%" with "rass" in message
+	replace all "m%{%player's uuid%.PrefixColorCode}%***%{%player's uuid%.SuffixColorCode}%" with "mass" in the message
+	replace all "ddos" with "§c§lDDOS%{%player's uuid%.SuffixColorCode}%" in the message
+	replace all "en%{%player's uuid%.PrefixColorCode}%***%{%player's uuid%.SuffixColorCode}%y" with "entity" in the message
+	replace all "gl%{%player's uuid%.PrefixColorCode}%***%{%player's uuid%.SuffixColorCode}%" with "glass" in the message
+	replace all "p%{%player's uuid%.PrefixColorCode}%***%{%player's uuid%.SuffixColorCode}%" with "pass" in message
+	replace all "gr%{%player's uuid%.PrefixColorCode}%***%{%player's uuid%.SuffixColorCode}%" with "grass" in message
+	replace all "l%{%player's uuid%.PrefixColorCode}%***%{%player's uuid%.SuffixColorCode}%" with "lass" in message
+	replace all "%{%player's uuid%.PrefixColorCode}%***%{%player's uuid%.SuffixColorCode}%u" with "assu" in message
+	replace all "b%{%player's uuid%.PrefixColorCode}%***%{%player's uuid%.SuffixColorCode}%" with "bass" in message
+	replace all "n%{%player's uuid%.PrefixColorCode}%***%{%player's uuid%.SuffixColorCode}%" with "ntit" in message
+	replace all "r%{%player's uuid%.PrefixColorCode}%***%{%player's uuid%.SuffixColorCode}%" with "rass" in message
 
 	# Faces and emoji
-	replace all ":recycle:" with "§2♻%{core.%player's uuid%.SuffixColorCode}%" in message
-	replace all ":pvp:" and ":swords:" with "§b⚔%{core.%player's uuid%.SuffixColorCode}%" in message
-	replace all ":star:" with "§e⭐%{core.%player's uuid%.SuffixColorCode}%" in message
-	replace all ":macro:" and ":command:" with "&f⌘%{core.%player's uuid%.SuffixColorCode}%" in message
-	replace all "<3" and ":heart:" with "§c❤%{core.%player's uuid%.SuffixColorCode}%" in the message
-	replace all ":)", "(:", "<:", ":>" and ":smile:" with "§a☺%{core.%player's uuid%.SuffixColorCode}%" in the message
-	replace all ":(", "):" and ":frown:" with "§c☹%{core.%player's uuid%.SuffixColorCode}%" in the message
+	replace all ":recycle:" with "§2♻%{%player's uuid%.SuffixColorCode}%" in message
+	replace all ":pvp:" and ":swords:" with "§b⚔%{%player's uuid%.SuffixColorCode}%" in message
+	replace all ":star:" with "§e⭐%{%player's uuid%.SuffixColorCode}%" in message
+	replace all ":macro:" and ":command:" with "&f⌘%{%player's uuid%.SuffixColorCode}%" in message
+	replace all "<3" and ":heart:" with "§c❤%{%player's uuid%.SuffixColorCode}%" in the message
+	replace all ":)", "(:", "<:", ":>" and ":smile:" with "§a☺%{%player's uuid%.SuffixColorCode}%" in the message
+	replace all ":(", "):" and ":frown:" with "§c☹%{%player's uuid%.SuffixColorCode}%" in the message
 	replace all "and:" with "andz:" in message #QUICK FIX MUST BE HERE
 	replace all "do:" with "doz:" in message #QUICK FIX MUST BE HERE
-	replace all ":shocked:", ":o" and "o:" with "§bö%{core.%player's uuid%.SuffixColorCode}%" in the message
-	replace all ":sad:", ":<", ">:" and "D:" with "§9☹%{core.%player's uuid%.SuffixColorCode}%" in the message
-	replace all ":happy:", ":D" and ";D" with "§e☺%{core.%player's uuid%.SuffixColorCode}%" in the message
+	replace all ":shocked:", ":o" and "o:" with "§bö%{%player's uuid%.SuffixColorCode}%" in the message
+	replace all ":sad:", ":<", ">:" and "D:" with "§9☹%{%player's uuid%.SuffixColorCode}%" in the message
+	replace all ":happy:", ":D" and ";D" with "§e☺%{%player's uuid%.SuffixColorCode}%" in the message
 	replace all "doz:" with "do:" in message #QUICK FIX REVERT
 	replace all "://" with "##colonslashslash##" in the message
-	replace all ":/", "\:", ":/", ":|", "|:", ":straightface:" and "/:" with "&e&m˙˙%{core.%player's uuid%.SuffixColorCode}%" in the message
+	replace all ":/", "\:", ":/", ":|", "|:", ":straightface:" and "/:" with "&e&m˙˙%{%player's uuid%.SuffixColorCode}%" in the message
 	replace all "##colonslashslash##" with "://" in the message
 	replace all ":skull:" with "§c☠" in the message
-	replace all ":moon:" and ":night:" with "§e⋆§8☽§e☄%{core.%player's uuid%.SuffixColorCode}%" in message
-	replace all "§e☺%{core.%player's uuid%.SuffixColorCode}%ay:" and ":sun:" with "§e☀%{core.%player's uuid%.SuffixColorCode}%" in the message
-	replace all ":lightning:" and ":storm:" with "§e⚡%{core.%player's uuid%.SuffixColorCode}%" in message
-	replace all "§bö%{core.%player's uuid%.SuffixColorCode}%-happy:" and ":happy-§bö%{core.%player's uuid%.SuffixColorCode}%" and "§a☺%{core.%player's uuid%.SuffixColorCode}%D)" with "§e☻%{core.%player's uuid%.SuffixColorCode}%" in message
-	replace all ":tm:" with "™%{core.%player's uuid%.SuffixColorCode}%" in message
-	replace all ":cross:" with "&e✞%{core.%player's uuid%.SuffixColorCode}%" in message
-	replace all ":hourglass:" with "&f⌛%{core.%player's uuid%.SuffixColorCode}%" in message
-	replace all ":snowman:" with "&b☃%{core.%player's uuid%.SuffixColorCode}%" in message
-	replace all ":snowflake:" with "&b❄%{core.%player's uuid%.SuffixColorCode}%" in message
-	replace all ":clock:" with "&f⌚%{core.%player's uuid%.SuffixColorCode}%" in message
-	replace all ":meteor:" with "&f&6☄%{core.%player's uuid%.SuffixColorCode}%" in message
-	replace all ":macro:" and ":command:" with "&f⌘%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all ":moon:" and ":night:" with "§e⋆§8☽§e☄%{%player's uuid%.SuffixColorCode}%" in message
+	replace all "§e☺%{%player's uuid%.SuffixColorCode}%ay:" and ":sun:" with "§e☀%{%player's uuid%.SuffixColorCode}%" in the message
+	replace all ":lightning:" and ":storm:" with "§e⚡%{%player's uuid%.SuffixColorCode}%" in message
+	replace all "§bö%{%player's uuid%.SuffixColorCode}%-happy:" and ":happy-§bö%{%player's uuid%.SuffixColorCode}%" and "§a☺%{%player's uuid%.SuffixColorCode}%D)" with "§e☻%{%player's uuid%.SuffixColorCode}%" in message
+	replace all ":tm:" with "™%{%player's uuid%.SuffixColorCode}%" in message
+	replace all ":cross:" with "&e✞%{%player's uuid%.SuffixColorCode}%" in message
+	replace all ":hourglass:" with "&f⌛%{%player's uuid%.SuffixColorCode}%" in message
+	replace all ":snowman:" with "&b☃%{%player's uuid%.SuffixColorCode}%" in message
+	replace all ":snowflake:" with "&b❄%{%player's uuid%.SuffixColorCode}%" in message
+	replace all ":clock:" with "&f⌚%{%player's uuid%.SuffixColorCode}%" in message
+	replace all ":meteor:" with "&f&6☄%{%player's uuid%.SuffixColorCode}%" in message
+	replace all ":macro:" and ":command:" with "&f⌘%{%player's uuid%.SuffixColorCode}%" in message
 	replace all "andz:" with "and:" in message #QUICK FIX REVERT
-	replace all ":arrow:" with "&f➳%{core.%player's uuid%.SuffixColorCode}%" in message
-	replace all ":pencil:" with "&6✎%{core.%player's uuid%.SuffixColorCode}%" in message
+	replace all ":arrow:" with "&f➳%{%player's uuid%.SuffixColorCode}%" in message
+	replace all ":pencil:" with "&6✎%{%player's uuid%.SuffixColorCode}%" in message
 	# Custom nickname
-	replace all "sccpsteve" with "§ascc§ap§3s§9teve%{core.%player's uuid%.SuffixColorCode}%" in the message
-	replace all "sccps" and "sccp" with "§asc§3c§9ps%{core.%player's uuid%.SuffixColorCode}%" in message
-	replace all "ShadowsBro" and "Jayden" with "&1J&2a&3y&cd&ae&bn%{core.%player's uuid%.SuffixColorCode}%" in message
-	replace all "§aSc§3c§9ps%{core.%player's uuid%.SuffixColorCode}%s" with "§aSc§3c§9ps%{core.%player's uuid%.SuffixColorCode}%" in the message
-#	replace all "redc##3ll0" with "§4♥§7♠§cred§bc3l§al0§7♠§4♥%{core.%player's uuid%.SuffixColorCode}%" in the message
-	replace all "irecycle" and "i_recycle" with "&b&lǝlɔʎ&6&lɔǝᴚ%{core.%player's uuid%.SuffixColorCode}%" in the message
-	replace all "plasma" with "&b&lɐɯs&6&lɐlԀ%{core.%player's uuid%.SuffixColorCode}%" in the message
-	replace all "razzy" with "&a&lRa&3&lz&9&lzy%{core.%player's uuid%.SuffixColorCode}%" in message
-	replace all "sentientchipbag", "chipbag" and "chippy" with "&d&ls&5&le&e&ln&d&lt&5&li&e&le&d&ln&5&lt&d&lc&5&lh&e&li&d&lp&5&lb&e&la&d&lg%{core.%player's uuid%.SuffixColorCode}%" in message
-	replace all "&b&lɐɯs&6&lɐlԀ&f_rooster24" with "&b&lɐɯs&6&lɐlԀ%{core.%player's uuid%.SuffixColorCode}%" in the message
-	replace all "I_&b&lǝlɔʎ&6&lɔǝᴚ" with "&b&lǝlɔʎ&6&lɔǝᴚ%{core.%player's uuid%.SuffixColorCode}%" in the message
-	replace all "DrakerMaker" and "Draker" with "&a&lDra&3&lke&b&lr%{core.%player's uuid%.SuffixColorCode}%" in message
-	replace all "scoops63" and "scoops" with "&aSco&2ops&063%{core.%player's uuid%.SuffixColorCode}%" in message
-	replace all ":gay:" and ":gayyy:" with "§##ff0000G§##ff4900A§##ff9200Y§##ffdb00Y§##dbff00Y§##92ff00Y§##49ff00Y§##00ff00Y§##00ff49Y§##00ff92Y§##00ffdbY§##00dbffY§##0092ffY§##0049ffY§##0000ffY%{core.%player's uuid%.SuffixColorCode}%" in the message
+	replace all "sccpsteve" with "§ascc§ap§3s§9teve%{%player's uuid%.SuffixColorCode}%" in the message
+	replace all "sccps" and "sccp" with "§asc§3c§9ps%{%player's uuid%.SuffixColorCode}%" in message
+	replace all "ShadowsBro" and "Jayden" with "&1J&2a&3y&cd&ae&bn%{%player's uuid%.SuffixColorCode}%" in message
+	replace all "§aSc§3c§9ps%{%player's uuid%.SuffixColorCode}%s" with "§aSc§3c§9ps%{%player's uuid%.SuffixColorCode}%" in the message
+#	replace all "redc##3ll0" with "§4♥§7♠§cred§bc3l§al0§7♠§4♥%{%player's uuid%.SuffixColorCode}%" in the message
+	replace all "irecycle" and "i_recycle" with "&b&lǝlɔʎ&6&lɔǝᴚ%{%player's uuid%.SuffixColorCode}%" in the message
+	replace all "plasma" with "&b&lɐɯs&6&lɐlԀ%{%player's uuid%.SuffixColorCode}%" in the message
+	replace all "razzy" with "&a&lRa&3&lz&9&lzy%{%player's uuid%.SuffixColorCode}%" in message
+	replace all "sentientchipbag", "chipbag" and "chippy" with "&d&ls&5&le&e&ln&d&lt&5&li&e&le&d&ln&5&lt&d&lc&5&lh&e&li&d&lp&5&lb&e&la&d&lg%{%player's uuid%.SuffixColorCode}%" in message
+	replace all "&b&lɐɯs&6&lɐlԀ&f_rooster24" with "&b&lɐɯs&6&lɐlԀ%{%player's uuid%.SuffixColorCode}%" in the message
+	replace all "I_&b&lǝlɔʎ&6&lɔǝᴚ" with "&b&lǝlɔʎ&6&lɔǝᴚ%{%player's uuid%.SuffixColorCode}%" in the message
+	replace all "DrakerMaker" and "Draker" with "&a&lDra&3&lke&b&lr%{%player's uuid%.SuffixColorCode}%" in message
+	replace all "scoops63" and "scoops" with "&aSco&2ops&063%{%player's uuid%.SuffixColorCode}%" in message
+	replace all ":gay:" and ":gayyy:" with "§##ff0000G§##ff4900A§##ff9200Y§##ffdb00Y§##dbff00Y§##92ff00Y§##49ff00Y§##00ff00Y§##00ff49Y§##00ff92Y§##00ffdbY§##00dbffY§##0092ffY§##0049ffY§##0000ffY%{%player's uuid%.SuffixColorCode}%" in the message
 	# message &e:hourglass: &6-> &f⌛
 	# message &e:command:, :macro: &6-> &f⌘
 	# message &e:snowman: &6-> &b☃
@@ -465,9 +465,9 @@ on chat:
 	# message &e:arrow: &6-> &f➳
 	# message &e:pencil: &6-> &6✎
 	# Expressions
-	replace all "##sigh" with "§7§o*sigh*%{core.%player's uuid%.SuffixColorCode}%" in the message
-	replace all "##laughs" with "§7§o*laughs*%{core.%player's uuid%.SuffixColorCode}%" in the message
-	replace all "##cheers" with "§7§o*cheers*%{core.%player's uuid%.SuffixColorCode}%" in the message
+	replace all "##sigh" with "§7§o*sigh*%{%player's uuid%.SuffixColorCode}%" in the message
+	replace all "##laughs" with "§7§o*laughs*%{%player's uuid%.SuffixColorCode}%" in the message
+	replace all "##cheers" with "§7§o*cheers*%{%player's uuid%.SuffixColorCode}%" in the message
 
 command /bountyquickerpickerupper [<text>]:
  trigger:
@@ -544,13 +544,13 @@ command /sc [<text>]:
 			message "&cModule Moderation is not enabled."
 			stop
 		if arg 1 is not set:
-			if {sc.core.%player's uuid%} is not set:
-				set {sc.core.%player's uuid%} to true
+			if {sc.%player's uuid%} is not set:
+				set {sc.%player's uuid%} to true
 				message "&8[&b&lSC&8] &fSuccessfully enabled staff whisper."
 				stop
 			else:
-				if {sc.core.%player's uuid%} is set:
-					delete {sc.core.%player's uuid%}
+				if {sc.%player's uuid%} is set:
+					delete {sc.%player's uuid%}
 					message "&8[&b&lSC&8] &fSuccessfully disabled staff whisper."
 		else:
 			if arg 1 is set:
@@ -559,7 +559,7 @@ command /sc [<text>]:
 						send "&8[&b&lSC&8] %player's displayname%&7: &fcore.%arg 1%" to loop-player
 
 on chat:
-	if {sc.core.%player's uuid%} is set:
+	if {sc.%player's uuid%} is set:
 		cancel event
 		loop all players:
 			if loop-player has permission "{@scperm}":
@@ -654,7 +654,7 @@ command /clearchat:
 			if loop-player does not have permission "{@clearChatBypass}":
 				loop 300 times:
 					send " " to loop-player
-		broadcast "{@servername} &bcore.%player's name% &3cleared the chat."
+		broadcast "{@servername} &b%player's name% &3cleared the chat."
 
 command /history <offlineplayer>:
 	permission: {@historyPerm}
@@ -708,10 +708,10 @@ command /warn <offlineplayer> <text>:
 			send "{@servername} &cYou cannot warn this player!" to player
 			stop
 		broadcast " "
-		broadcast "{@servername} &ecore.%player's name% &6warned &ecore.%arg-1% &6for &ecore.%arg-2%&6."
+		broadcast "{@servername} &e%player's name% &6warned &ecore.%arg-1% &6for &ecore.%arg-2%&6."
 		broadcast " "
 		
-		set {_m} to "&ecore.%player's name% &6warned &ecore.%arg-1% &6for&e core.%arg-2%&6 on &e%now%"
+		set {_m} to "&e%player's name% &6warned &ecore.%arg-1% &6for&e core.%arg-2%&6 on &e%now%"
 		add {_m} to {history::core.%uuid of arg-1%::*}
 
 command /mute <offlineplayer> [<text>] [<timespan>]:
@@ -733,20 +733,20 @@ command /mute <offlineplayer> [<text>] [<timespan>]:
 		if arg-2 is set:
 			loop all players:
 				if loop-player does not have permission "jumpp.warn":
-					send "{@servername} &ccore.%player's name% &4muted &ccore.%arg-1% &4for core.%arg-2%" to loop-player
+					send "{@servername} &c%player's name% &4muted &ccore.%arg-1% &4for core.%arg-2%" to loop-player
 				else:
-					send "{@servername} &ccore.%player's name% &4muted &ccore.%arg-1% &4for &ccore.%arg-2%&4 for &ccore.%arg-3%" to loop-player if arg-3 is set
-					send "{@servername} &ccore.%player's name% &4muted &ccore.%arg-1% &4for&c core.%arg-2% &c[FOREVER]" to loop-player if arg-3 is not set
+					send "{@servername} &c%player's name% &4muted &ccore.%arg-1% &4for &ccore.%arg-2%&4 for &ccore.%arg-3%" to loop-player if arg-3 is set
+					send "{@servername} &c%player's name% &4muted &ccore.%arg-1% &4for&c core.%arg-2% &c[FOREVER]" to loop-player if arg-3 is not set
 		else:
 			loop all players:
 				if loop-player does not have permission "jumpp.warn":
-					send "{@servername} &ccore.%player's name% &4muted &ccore.%arg-1% &4for &ccore.%arg-2%" to loop-player
+					send "{@servername} &c%player's name% &4muted &ccore.%arg-1% &4for &ccore.%arg-2%" to loop-player
 				else:
-					send "{@servername} &ccore.%player's name% &4muted &ccore.%arg-1% &4for&c core.%arg-2% &c[FOREVER]" to loop-player if arg-3 is not set
+					send "{@servername} &c%player's name% &4muted &ccore.%arg-1% &4for&c core.%arg-2% &c[FOREVER]" to loop-player if arg-3 is not set
 		broadcast " "
 			
-		set {_h} to "&ccore.%player's name% &4muted &ccore.%arg-1% &4for&c core.%arg-2% &4on&c %now%" if arg-3 is set
-		set {_h} to "&ccore.%player's name% &4muted &ccore.%arg-1% &4for&c core.%arg-2% &c[FOREVER] &4on&c %now%" if arg-3 is not set
+		set {_h} to "&c%player's name% &4muted &ccore.%arg-1% &4for&c core.%arg-2% &4on&c %now%" if arg-3 is set
+		set {_h} to "&c%player's name% &4muted &ccore.%arg-1% &4for&c core.%arg-2% &c[FOREVER] &4on&c %now%" if arg-3 is not set
 		add {_h} to {history::core.%uuid of arg-1%::*} 
 		add uuid of arg-1 to {muted::*}
 
@@ -766,7 +766,7 @@ command /unmute <offlineplayer> [<text>]:
 		if {muted::*} contains uuid of arg-1:
 			loop all players:
 				loop-player has permission "jumpp.warn":
-					send "{@servername} &acore.%player's name%&2 unmuted &acore.%arg-1%" to loop-player
+					send "{@servername} &a%player's name%&2 unmuted &acore.%arg-1%" to loop-player
 		else:
 			send "{@servername} &ccore.%arg-1% &4is not muted!" to player	
 			
@@ -790,13 +790,13 @@ command /ban <offlineplayer> [<text>] [<timespan>]:
 			
 		broadcast " "
 		if arg-2 is set:
-			broadcast "{@servername} &ccore.%player's name% &4banned &ccore.%arg-1% &4for&c core.%arg-2%"
+			broadcast "{@servername} &c%player's name% &4banned &ccore.%arg-1% &4for&c core.%arg-2%"
 		else:
-			broadcast "{@servername} &ccore.%player's name% &4banned &ccore.%arg-1%"
+			broadcast "{@servername} &c%player's name% &4banned &ccore.%arg-1%"
 		broadcast " "
 		
-		set {_h} to "&ccore.%arg-1% &4was banned by &ccore.%player's name% &4for&c core.%arg-2% &4for &ccore.%arg-3% &4on&c %now%" if arg-3 is set
-		set {_h} to "&ccore.%arg-1% &4was banned by &ccore.%player's name% &4for&c core.%arg-2% &c[FOREVER] &4on&c %now%" if arg-3 is not set
+		set {_h} to "&ccore.%arg-1% &4was banned by &c%player's name% &4for&c core.%arg-2% &4for &ccore.%arg-3% &4on&c %now%" if arg-3 is set
+		set {_h} to "&ccore.%arg-1% &4was banned by &c%player's name% &4for&c core.%arg-2% &c[FOREVER] &4on&c %now%" if arg-3 is not set
 		add {_h} to {history::core.%uuid of arg-1%::*} 
 		
 		kick the arg-1
@@ -814,15 +814,15 @@ command /unban <offlineplayer>:
 			unban the arg-1
 			loop all players:
 				loop-player has permission "jumpp.warn":
-					send "{@servername} &bcore.%player's name%&3 unbanned &bcore.%arg-1%" to loop-player
+					send "{@servername} &b%player's name%&3 unbanned &bcore.%arg-1%" to loop-player
 		else:
 			send "{@servername} &ccore.%arg-1% &4is not banned!"
 			
 #==========================================================================================
 on connect:
 	if {banned::*} contains player:
-		execute console command "/msg core.%player% Attempt to join while banned"
-		kick the player due to {core.%player%.reason}
+		execute console command "/msg %player% Attempt to join while banned"
+		kick the player due to {%player%.reason}
 command /trapgui <player> [<number>]:
 	permission: {@trapGui}
 	usage: &3/trapgui <player> [<amount of time in seconds>]
@@ -839,10 +839,10 @@ command /trapgui <player> [<number>]:
 				remove arg 1 from {trappedgui::*}
 				close arg 1's inventory
 		else:
-			message "&3You trapped &bcore.%arg 1% &3in a GUI forever. Type &b/trapgui core.%player% 1&3 to reverse this." to player
+			message "&3You trapped &bcore.%arg 1% &3in a GUI forever. Type &b/trapgui %player% 1&3 to reverse this." to player
 			if {trappedgui::*} does not contain arg 1:
 				add arg 1 to {trappedgui::*}
-			set {core.%player%.unltime} to "inf"
+			set {%player%.unltime} to "inf"
 command /cleartgui:
 	permission: op
 	trigger:
@@ -860,10 +860,10 @@ every tick:
 			open chest with 1 row named "&4Guibanned for %{core.%loop-player%.unltime}% seconds." to loop-player
 on chat:
 
-	if {core.%player%.unltime} is 0:
+	if {%player%.unltime} is 0:
 		stop
 		remove player from {trappedgui::*}
-	else if {core.%player%.unltime} is not set:
+	else if {%player%.unltime} is not set:
 		stop
 		remove player from {trappedgui::*}
 	if {trappedgui::*} contains player:
@@ -875,7 +875,7 @@ on first login:
 command /players:
 	aliases: plist, list, playerlist
 	trigger:
-		message "&bcore.%players%&b &3(&bcore.%player count%&3/&b500&3)"
+		message "&b%players%&b &3(&b%player count%&3/&b500&3)"
 
 command /bc [<text>]:
   aliases: /sb, /bcast, /broadcast, /broadc, /announce
@@ -912,8 +912,8 @@ on right click:
     loop 2 times:
       wait 1 tick
       push player upwards at speed 0.05
-      set {core.%player%RandomNote} to random number from 0 to 2
-      execute console command "/execute at %player% run playsound entity.ghast.scream player @a ~ ~ ~ 0.5 %{core.%player%RandomNote}%"
+      set {%player%RandomNote} to random number from 0 to 2
+      execute console command "/execute at %player% run playsound entity.ghast.scream player @a ~ ~ ~ 0.5 %{%player%RandomNote}%"
 aliases:
 	netherite block = minecraft:netherite_block
 
@@ -950,48 +950,48 @@ on left click on concrete:
 		if {module.gp} is not set:
 			stop
 		cancel event
-		if {core.%player%.colorwool} is "white":
+		if {%player%.colorwool} is "white":
 			set block to white concrete
-			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:white_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
-		if {core.%player%.colorwool} is "brown":
+			execute console command "execute in %player's world% run particle minecraft:block minecraft:white_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {%player%.colorwool} is "brown":
 			set block to brown concrete
-			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:brown_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
-		if {core.%player%.colorwool} is "light gray":
+			execute console command "execute in %player's world% run particle minecraft:block minecraft:brown_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {%player%.colorwool} is "light gray":
 			set block to light gray concrete 
-			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:light_gray_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
-		if {core.%player%.colorwool} is "black":
+			execute console command "execute in %player's world% run particle minecraft:block minecraft:light_gray_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {%player%.colorwool} is "black":
 			set block to black concrete
-			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:black_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
-		if {core.%player%.colorwool} is "red":
+			execute console command "execute in %player's world% run particle minecraft:block minecraft:black_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {%player%.colorwool} is "red":
 			set block to red concrete
-			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:red_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
-		if {core.%player%.colorwool} is "orange":
+			execute console command "execute in %player's world% run particle minecraft:block minecraft:red_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {%player%.colorwool} is "orange":
 			set block to orange concrete
-			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:orange_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
-		if {core.%player%.colorwool} is "yellow":
+			execute console command "execute in %player's world% run particle minecraft:block minecraft:orange_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {%player%.colorwool} is "yellow":
 			set block to yellow concrete
-			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:yellow_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
-		if {core.%player%.colorwool} is "lime":
+			execute console command "execute in %player's world% run particle minecraft:block minecraft:yellow_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {%player%.colorwool} is "lime":
 			set block to lime concrete
-			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:lime_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
-		if {core.%player%.colorwool} is "gray":
+			execute console command "execute in %player's world% run particle minecraft:block minecraft:lime_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {%player%.colorwool} is "gray":
 			set block to gray concrete
-			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:gray_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
-		if {core.%player%.colorwool} is "light blue":
+			execute console command "execute in %player's world% run particle minecraft:block minecraft:gray_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {%player%.colorwool} is "light blue":
 			set block to light blue concrete 
-			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:light_blue_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
-		if {core.%player%.colorwool} is "cyan":
+			execute console command "execute in %player's world% run particle minecraft:block minecraft:light_blue_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {%player%.colorwool} is "cyan":
 			set block to cyan concrete
-			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:cyan_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
-		if {core.%player%.colorwool} is "blue":
+			execute console command "execute in %player's world% run particle minecraft:block minecraft:cyan_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {%player%.colorwool} is "blue":
 			set block to blue concrete
-			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:blue_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
-		if {core.%player%.colorwool} is "purple":
+			execute console command "execute in %player's world% run particle minecraft:block minecraft:blue_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {%player%.colorwool} is "purple":
 			set block to purple concrete
-			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:purple_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
-		if {core.%player%.colorwool} is "pink":
+			execute console command "execute in %player's world% run particle minecraft:block minecraft:purple_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+		if {%player%.colorwool} is "pink":
 			set block to pink concrete
-			execute console command "execute in core.%player's world% run particle minecraft:block minecraft:pink_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
+			execute console command "execute in %player's world% run particle minecraft:block minecraft:pink_wool %x-coordinate of event-block% %y-coordinate of event-block% %z-coordinate of event-block% 0.1 0.1 0.1 0.5 50 force @a"
 		execute console command "/execute at %player% run playsound minecraft:entity.boat.paddle_water ambient @a ~ ~ ~ 2 %random number from 1.1 to 1.4%"
 		wait 5 tick
 		set player's fly mode to true
@@ -999,8 +999,8 @@ on right click:
 	if player is holding a golden shovel named "&9&lPaintbrush":
 		if {module.gp} is not set:
 			stop
-		set {core.%player%.prevcolorwool} to {core.%player%.colorwool}
-		set {invpaint.core.%player%} to true
+		set {%player%.prevcolorwool} to {%player%.colorwool}
+		set {invpaint.%player%} to true
 		apply potion of blindness of tier 500 without particles to player for 10000000 seconds
 		apply potion of slowness of tier 124 without particles to player for 10000000 seconds
 		open chest with 5 rows named "&9&lPaintbrush" to player
@@ -1014,22 +1014,22 @@ on right click:
 		format slot 7 of player with gray stained glass pane named "&f" to be unstealable
 		format slot 8 of player with gray stained glass pane named "&f" to be unstealable
 		format slot 9 of player with gray stained glass pane named "&f" to be unstealable
-		format slot 10 of player with white stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "white"]
-		format slot 11 of player with light gray stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "light gray"]
-		format slot 12 of player with gray stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "gray"]
-		format slot 13 of player with black stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "black"]
-		format slot 14 of player with brown stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "brown"]
-		format slot 15 of player with red stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "red"]
-		format slot 16 of player with orange stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "orange"]
+		format slot 10 of player with white stained glass pane named "&f" to close then run [set {%player%.colorwool} to "white"]
+		format slot 11 of player with light gray stained glass pane named "&f" to close then run [set {%player%.colorwool} to "light gray"]
+		format slot 12 of player with gray stained glass pane named "&f" to close then run [set {%player%.colorwool} to "gray"]
+		format slot 13 of player with black stained glass pane named "&f" to close then run [set {%player%.colorwool} to "black"]
+		format slot 14 of player with brown stained glass pane named "&f" to close then run [set {%player%.colorwool} to "brown"]
+		format slot 15 of player with red stained glass pane named "&f" to close then run [set {%player%.colorwool} to "red"]
+		format slot 16 of player with orange stained glass pane named "&f" to close then run [set {%player%.colorwool} to "orange"]
 		format slot 17 of player with gray stained glass pane named "&f" to be unstealable
 		format slot 18 of player with gray stained glass pane named "&f" to be unstealable
-		format slot 19 of player with yellow stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "yellow"]
-		format slot 20 of player with lime stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "lime"]
-		format slot 21 of player with cyan stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "cyan"]
-		format slot 22 of player with light blue stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "light blue"]
-		format slot 23 of player with blue stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "blue"]
-		format slot 24 of player with purple stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "purple"]
-		format slot 25 of player with pink stained glass pane named "&f" to close then run [set {core.%player%.colorwool} to "pink"]
+		format slot 19 of player with yellow stained glass pane named "&f" to close then run [set {%player%.colorwool} to "yellow"]
+		format slot 20 of player with lime stained glass pane named "&f" to close then run [set {%player%.colorwool} to "lime"]
+		format slot 21 of player with cyan stained glass pane named "&f" to close then run [set {%player%.colorwool} to "cyan"]
+		format slot 22 of player with light blue stained glass pane named "&f" to close then run [set {%player%.colorwool} to "light blue"]
+		format slot 23 of player with blue stained glass pane named "&f" to close then run [set {%player%.colorwool} to "blue"]
+		format slot 24 of player with purple stained glass pane named "&f" to close then run [set {%player%.colorwool} to "purple"]
+		format slot 25 of player with pink stained glass pane named "&f" to close then run [set {%player%.colorwool} to "pink"]
 		format slot 26 of player with gray stained glass pane named "&f" to be unstealable
 		format slot 27 of player with gray stained glass pane named "&f" to be unstealable
 		format slot 28 of player with gray stained glass pane named "&f" to be unstealable
@@ -1088,48 +1088,48 @@ on right click on glass block:
 
 on inventory close:
 	wait 2 ticks
-	if "%{core.%player%.prevcolorwool}%" is not "%{core.%player%.colorwool}%":
-		set {core.%player%.prevcolorwool} to {core.%player%.colorwool}
+	if "%{%player%.prevcolorwool}%" is not "%{%player%.colorwool}%":
+		set {%player%.prevcolorwool} to {%player%.colorwool}
 		execute console command "/execute as %player% at @s run playsound minecraft:block.note_block.pling ambient @s ~ ~ ~ 2 1.34"
 		execute console command "/effect clear %player% blindness"
 		execute console command "/effect clear %player% slowness"
-		if {core.%player%.colorwool} is "red":
+		if {%player%.colorwool} is "red":
 			message "&7&o&l➢ &fPaint Color: &4⬛"
-		if {core.%player%.colorwool} is "orange":
+		if {%player%.colorwool} is "orange":
 			message "&7&o&l➢ &fPaint Color: &6⬛"
-		if {core.%player%.colorwool} is "yellow":
+		if {%player%.colorwool} is "yellow":
 			message "&7&o&l➢ &fPaint Color: &e⬛"
-		if {core.%player%.colorwool} is "lime":
+		if {%player%.colorwool} is "lime":
 			message "&7&o&l➢ &fPaint Color: &a⬛"
-		if {core.%player%.colorwool} is "light blue":
+		if {%player%.colorwool} is "light blue":
 			message "&7&o&l➢ &fPaint Color: &b⬛"
-		if {core.%player%.colorwool} is "cyan":
+		if {%player%.colorwool} is "cyan":
 			message "&7&o&l➢ &fPaint Color: &3⬛"
-		if {core.%player%.colorwool} is "blue":
+		if {%player%.colorwool} is "blue":
 			message "&7&o&l➢ &fPaint Color: &1⬛"
-		if {core.%player%.colorwool} is "purple":
+		if {%player%.colorwool} is "purple":
 			message "&7&o&l➢ &fPaint Color: &5⬛"
-		if {core.%player%.colorwool} is "pink":
+		if {%player%.colorwool} is "pink":
 			message "&7&o&l➢ &fPaint Color: &d⬛"
-		if {core.%player%.colorwool} is "white":
+		if {%player%.colorwool} is "white":
 			message "&7&o&l➢ &fPaint Color: &f⬛"
-		if {core.%player%.colorwool} is "light gray":
+		if {%player%.colorwool} is "light gray":
 			message "&7&o&l➢ &fPaint Color: &7⬛"
-		if {core.%player%.colorwool} is "gray":
+		if {%player%.colorwool} is "gray":
 			message "&7&o&l➢ &fPaint Color: &8⬛"
-		if {core.%player%.colorwool} is "brown":
+		if {%player%.colorwool} is "brown":
 			message "&7&o&l➢ &fPaint Color: <##8E491C>⬛"
-		if {core.%player%.colorwool} is "black":
+		if {%player%.colorwool} is "black":
 			message "&7&o&l➢ &fPaint Color: &0⬛"
 		wait 0.2 second
 		set player's gamemode to survival
 		set player's fly mode to true
-	else if {invpaint.core.%player%} is true:
+	else if {invpaint.%player%} is true:
 		execute console command "/effect clear %player% blindness"
 		execute console command "/effect clear %player% slowness"
 		set player's gamemode to survival
 		set player's fly mode to true
-		set {invpaint.core.%player%} to false
+		set {invpaint.%player%} to false
 
 on left click on stone:
     if {module.gp} is not set:
@@ -1271,7 +1271,7 @@ command /elytra:
     cooldown message: &cYou are sending too many requests!
     trigger:
         if player's world is {@elyCmdAllowedInWorld}:
-            execute console command "/playsound minecraft:entity.player.attack.sweep ambient core.%player% ~ ~ ~ 1000000"
+            execute console command "/playsound minecraft:entity.player.attack.sweep ambient %player% ~ ~ ~ 1000000"
             push player upwards at speed 500
             execute console command "/minecraft:item replace entity %player% armor.chest with minecraft:elytra{Unbreakable:1b}"
         else:
@@ -1698,17 +1698,17 @@ command /nobodyasked <player>:
 command /attndone:
 	trigger:
 		execute player command "/donone"
-		message "&c&lATTENTION! &7&l> &f%{from.attn.core.%player%}% &7&l> &f%colored {attn.core.%player%}%"  to player		
+		message "&c&lATTENTION! &7&l> &f%{from.attn.%player%}% &7&l> &f%colored {attn.%player%}%"  to player		
 		remove player from {attn::*}
-		clear {attn.core.%player%}
-		message "&9@%player%&a picked up your attention call." to {from.attn.core.%player%}
+		clear {attn.%player%}
+		message "&9@%player%&a picked up your attention call." to {from.attn.%player%}
 on inventory close:
-	if {attn.core.%player%} is set: 
-		message "&9@%player%&c didn't pick up your attention call." to {from.attn.core.%player%}
+	if {attn.%player%} is set: 
+		message "&9@%player%&c didn't pick up your attention call." to {from.attn.%player%}
 		remove player from {attn::*}
-		clear {attn.core.%player%}
+		clear {attn.%player%}
 	if {vote::*} contains player:
-		execute console command "/votesee %colored {voteTopic}% core.%player%"
+		execute console command "/votesee %colored {voteTopic}% %player%"
 command /erasevar <text>:
  trigger:
   message "&cVariable cleared. Previous data: &f%{core.%arg 1%}%"
@@ -1870,12 +1870,12 @@ command /core-reload:
   permission: op
   trigger:
     message "&3Core is now reloading..."
-    log "[CORE] core.%player% reloaded Core." to "core.log" 
+    log "[CORE] %player% reloaded Core." to "core.log" 
     execute player command "/sk reload core"
 
 command /whatisthis:
 	trigger:
-		message "core.%player's tool%"
+		message "%player's tool%"
 command /ulterca [<text>]:
   trigger:
     send "&3&l/ulterca &b&lAll In One"
@@ -1884,7 +1884,7 @@ command /forcechat [<player>] [<text>]:
   permission: op
   trigger:
     make arg 1 say arg 2
-    log "[CORE] core.%player% used /forcechat to make ""core.%arg 1% say core.%arg 2%""." to "core.log" 
+    log "[CORE] %player% used /forcechat to make ""core.%arg 1% say core.%arg 2%""." to "core.log" 
 
 command /protest [<text>]:
   permission: op
@@ -1893,17 +1893,17 @@ command /protest [<text>]:
   trigger:
     loop all players:
       make loop-player say arg 1
-      log "[CORE] core.%player% used /protest to protest ""core.%arg 1%""." to "core.log" 
+      log "[CORE] %player% used /protest to protest ""core.%arg 1%""." to "core.log" 
 
 
 
 
 on chat:
-  log "[core.%player%] [chat] %message%" to "logs.log" 
+  log "[%player%] [chat] %message%" to "logs.log" 
 
 command:
   if player is not equal to "<none>":
-    log "[core.%player%] [command] %full command%" to "logs.log" 
+    log "[%player%] [command] %full command%" to "logs.log" 
 
 command /invsee [<player>]:
   aliases: /isee, /invs, /inventory
@@ -1939,16 +1939,16 @@ command /shout <text>:
     broadcast "&4&l[&c&LSHOUT&4&l] %player's displayname% &4➢ &c%colored arg 1%"
 
 on chat:
-  if {core.%player's uuid%LVL} is not set:
-    set {core.%player's uuid%LVL} to ""
-  if {core.%player's uuid%PREFIX} is not set:
-    set {core.%player's uuid%PREFIX} to ""
+  if {%player's uuid%LVL} is not set:
+    set {%player's uuid%LVL} to ""
+  if {%player's uuid%PREFIX} is not set:
+    set {%player's uuid%PREFIX} to ""
 
 on join:
-  if {core.%player's uuid%LVL} is not set:
-    set {core.%player's uuid%LVL} to ""
-  if {core.%player's uuid%PREFIX} is not set:
-    set {core.%player's uuid%PREFIX} to ""
+  if {%player's uuid%LVL} is not set:
+    set {%player's uuid%LVL} to ""
+  if {%player's uuid%PREFIX} is not set:
+    set {%player's uuid%PREFIX} to ""
 
 command /setprefix [<text>]:
   permission: op
@@ -1957,10 +1957,10 @@ command /setprefix [<text>]:
       stop
       message "&cModule Custom Chat is disabled."
     if arg 1 is set:
-      set {core.%player's uuid%PREFIX} to "%colored arg 1%&7&l > "
-      send "&7Successfully set your chat prefix to &8""&f%{core.%player's uuid%PREFIX}%&8""&7."
+      set {%player's uuid%PREFIX} to "%colored arg 1%&7&l > "
+      send "&7Successfully set your chat prefix to &8""&f%{%player's uuid%PREFIX}%&8""&7."
     else:
-      set {core.%player's uuid%PREFIX} to ""
+      set {%player's uuid%PREFIX} to ""
       send "&7Successfully cleared your chat prefix."
 
 command /setnick [<text>]:
@@ -1969,7 +1969,7 @@ command /setnick [<text>]:
     if {module.cpref} is not set:
       message "&cModule Custom Chat is disabled."
       stop
-    execute console command "/nickname core.%player% %colored arg 1%"
+    execute console command "/nickname %player% %colored arg 1%"
     send "&7Successfully set your chat name to &8""&f%colored arg 1%&8""&7."
 
 command /hologram [<text>] [<text>]:
