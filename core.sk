@@ -309,7 +309,7 @@ command /removestaff <offline player>:
 		message "&8[{@servername}&8] &7core.%arg 1% was remove from the list!" to player
 
 on first join:
-  send "&3Welcome &bcore.%player%&3! Please enjoy your stay! &e☺" to player
+  send "&3Welcome &b%player%&3! Please enjoy your stay! &e☺" to player
   log "[CORE] core.%player% joined for the first time." to "core.log" 
 
 on world change:
@@ -654,7 +654,7 @@ command /clearchat:
 			if loop-player does not have permission "{@clearChatBypass}":
 				loop 300 times:
 					send " " to loop-player
-		broadcast "{@servername} &bcore.%player's name% &3cleared the chat."
+		broadcast "{@servername} &b%player's name% &3cleared the chat."
 
 command /history <offlineplayer>:
 	permission: {@historyPerm}
@@ -665,9 +665,9 @@ command /history <offlineplayer>:
 			message "&cModule Moderation is not enabled."
 			stop
 		send " "
-		send "&3History of &bcore.%arg-1%"
+		send "&3History of &b%arg-1%"
 		loop {history::core.%uuid of arg-1%::*}:
-			send "&bcore.%loop-index% &7- &bcore.%loop-value%" to player
+			send "&b%loop-index% &7- &b%loop-value%" to player
 		send " "
 
 command /delhistory <offlineplayer> <number>:
@@ -814,7 +814,7 @@ command /unban <offlineplayer>:
 			unban the arg-1
 			loop all players:
 				loop-player has permission "jumpp.warn":
-					send "{@servername} &bcore.%player's name%&3 unbanned &bcore.%arg-1%" to loop-player
+					send "{@servername} &b%player's name%&3 unbanned &b%arg-1%" to loop-player
 		else:
 			send "{@servername} &ccore.%arg-1% &4is not banned!"
 			
@@ -839,7 +839,7 @@ command /trapgui <player> [<number>]:
 				remove arg 1 from {trappedgui::*}
 				close arg 1's inventory
 		else:
-			message "&3You trapped &bcore.%arg 1% &3in a GUI forever. Type &b/trapgui core.%player% 1&3 to reverse this." to player
+			message "&3You trapped &b%arg 1% &3in a GUI forever. Type &b/trapgui core.%player% 1&3 to reverse this." to player
 			if {trappedgui::*} does not contain arg 1:
 				add arg 1 to {trappedgui::*}
 			set {core.%player%.unltime} to "inf"
@@ -875,7 +875,7 @@ on first login:
 command /players:
 	aliases: plist, list, playerlist
 	trigger:
-		message "&bcore.%players%&b &3(&bcore.%player count%&3/&b500&3)"
+		message "&b%players%&b &3(&b%player count%&3/&b500&3)"
 
 command /bc [<text>]:
   aliases: /sb, /bcast, /broadcast, /broadc, /announce
@@ -1861,7 +1861,7 @@ command /voteIdfk <player>:
 		wait a tick
 		broadcast ""
 		wait a tick
-		broadcast "&3Latest voter: &bcore.%arg 1%"
+		broadcast "&3Latest voter: &b%arg 1%"
 		wait a tick
 		broadcast ""
 
