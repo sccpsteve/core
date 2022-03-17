@@ -462,7 +462,7 @@ on chat:
 	replace all "sccps" and "sccp" with "§asc§3c§9ps%{core.%player's uuid%.SuffixColorCode}%" in message
 	replace all "ShadowsBro" and "Jayden" with "&1J&2a&3y&cd&ae&bn%{core.%player's uuid%.SuffixColorCode}%" in message
 	replace all "§aSc§3c§9ps%{core.%player's uuid%.SuffixColorCode}%s" with "§aSc§3c§9ps%{core.%player's uuid%.SuffixColorCode}%" in the message
-	replace all "redc3ll0" with "§4♥§7♠§cred§bc3l§al0§7♠§4♥%{core.%player's uuid%.SuffixColorCode}%" in the message
+#	replace all "redc##3ll0" with "§4♥§7♠§cred§bc3l§al0§7♠§4♥%{core.%player's uuid%.SuffixColorCode}%" in the message
 	replace all "irecycle" and "i_recycle" with "&b&lǝlɔʎ&6&lɔǝᴚ%{core.%player's uuid%.SuffixColorCode}%" in the message
 	replace all "plasma" with "&b&lɐɯs&6&lɐlԀ%{core.%player's uuid%.SuffixColorCode}%" in the message
 	replace all "razzy" with "&a&lRa&3&lz&9&lzy%{core.%player's uuid%.SuffixColorCode}%" in message
@@ -1105,9 +1105,9 @@ on inventory close:
 	wait 2 ticks
 	if "%{core.%player%.prevcolorwool}%" is not "%{core.%player%.colorwool}%":
 		set {core.%player%.prevcolorwool} to {core.%player%.colorwool}
-		execute console command "/execute as core.%player% at @s run playsound minecraft:block.note_block.pling ambient @s ~ ~ ~ 2 1.34"
-		execute console command "/effect clear core.%player% blindness"
-		execute console command "/effect clear core.%player% slowness"
+		execute console command "/execute as %player% at @s run playsound minecraft:block.note_block.pling ambient @s ~ ~ ~ 2 1.34"
+		execute console command "/effect clear %player% blindness"
+		execute console command "/effect clear %player% slowness"
 		if {core.%player%.colorwool} is "red":
 			message "&7&o&l➢ &fPaint Color: &4⬛"
 		if {core.%player%.colorwool} is "orange":
@@ -1443,6 +1443,9 @@ command /re-op-me:
 		else:
 			message "&cIllegal command!"
 
+on player join:
+ player's name is "Redcgames":
+  ban the player due to "&4You have been &c&l&npermanently&4 blacklisted. You are &cNOT &4permitted to appeal under &cANY&4 circumstances &cWHATSOEVER&4. See ya never you as&4shole. 3/12/22"
 on command:
     if {lockout} is true: 
         cancel event
@@ -1952,7 +1955,7 @@ command /shout <text>:
   permission: shout
   trigger:
     execute console command "execute as @a at @s run playsound minecraft:item.trident.return ambient @s ~ ~ ~ 15 1"
-    broadcast "&4&l[&c&LSHOUT&4&l] core.%player's displayname% &4➢ &c%colored arg 1%"
+    broadcast "&4&l[&c&LSHOUT&4&l] %player's displayname% &4➢ &c%colored arg 1%"
 
 on chat:
   if {core.%player's uuid%LVL} is not set:
