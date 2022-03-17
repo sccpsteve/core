@@ -863,7 +863,7 @@ command /cleartgui:
 	permission: op
 	trigger:
 		clear {trappedgui::*}
-		message "OK"
+		message "&3Trapped Gui variable has been wiped. No one should be trapped in a gui any longer."
 every tick:
 	loop all players:
 		if {trappedgui::*} contains loop-player:
@@ -886,7 +886,7 @@ on chat:
 		cancel event
 		message "&cYou shouldn't be chatting while you're trapped in a gui."
 on first login:
-  broadcast "&bcore.%player% &3has entered {@servername} &3for the first time. Welcome in!"
+  broadcast "&b%player% &3has entered {@servername} &3for the first time. Welcome in!"
 
 command /players:
 	aliases: plist, list, playerlist
@@ -901,13 +901,13 @@ command /bc [<text>]:
     
 command /shame <player> <text>:
   trigger:
-    broadcast "&ccore.%player%&4 has shamed &ccore.%arg 1% &4for &ccore.%arg 2%&4."
+    broadcast "&c%player%&4 has shamed &c%arg 1% &4for &c%arg 2%&4."
     execute console command "/playsound entity.arrow.hit_player ambient @a ~ ~ ~ 10 0"
 
 command /highlight <player> <text>:
   permission: op
   trigger:
-    broadcast "&e&lcore.%player% has highlighted the astounding user core.%arg 1% for core.%arg 2%!"
+    broadcast "&e&l%player% has highlighted the astounding user %arg 1% for %arg 2%!"
     execute console command "/playsound entity.arrow.hit_player ambient @a ~ ~ ~ 10 0"
     execute console command "/playsound entity.arrow.hit_player ambient @a ~ ~ ~ 10 0.1"
     execute console command "/playsound entity.arrow.hit_player ambient @a ~ ~ ~ 10 0.2"
@@ -936,7 +936,7 @@ aliases:
 on drop:
 	if player's world is "artboard":
 		cancel event
-		execute console command "/execute at core.%player% in core.%player's world% run playsound minecraft:entity.item.pickup master @a ~ ~ ~ 0.5 2"
+		execute console command "/execute at %player% in %player's world% run playsound minecraft:entity.item.pickup master @a ~ ~ ~ 0.5 2"
 on right click:
 	if {module.gp} is not set:
 		stop
@@ -1140,15 +1140,11 @@ on inventory close:
 		set player's gamemode to survival
 		set player's fly mode to true
 	else if {invpaint.core.%player%} is true:
-		execute console command "/effect clear core.%player% blindness"
-		execute console command "/effect clear core.%player% slowness"
+		execute console command "/effect clear %player% blindness"
+		execute console command "/effect clear %player% slowness"
 		set player's gamemode to survival
 		set player's fly mode to true
 		set {invpaint.core.%player%} to false
-command /tellrawpaintbrown <text>:
-	permission: updateTellraw
-	trigger:
-		set {tellraw.paint.brown} to arg 1
 
 on left click on stone:
     if {module.gp} is not set:
